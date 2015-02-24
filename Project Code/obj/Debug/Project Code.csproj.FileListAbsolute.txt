@@ -1,9 +1,0 @@
-C:\Users\Xin\Documents\Files\U of Calgary\Courses\CPSC 481\Projects\Project Code\Project Code\bin\Debug\Project Code.exe.config
-C:\Users\Xin\Documents\Files\U of Calgary\Courses\CPSC 481\Projects\Project Code\Project Code\bin\Debug\Project Code.exe
-C:\Users\Xin\Documents\Files\U of Calgary\Courses\CPSC 481\Projects\Project Code\Project Code\bin\Debug\Project Code.pdb
-C:\Users\Xin\Documents\Files\U of Calgary\Courses\CPSC 481\Projects\Project Code\Project Code\obj\Debug\Project Code.csprojResolveAssemblyReference.cache
-C:\Users\Xin\Documents\Files\U of Calgary\Courses\CPSC 481\Projects\Project Code\Project Code\obj\Debug\Project_Code.Form1.resources
-C:\Users\Xin\Documents\Files\U of Calgary\Courses\CPSC 481\Projects\Project Code\Project Code\obj\Debug\Project_Code.Properties.Resources.resources
-C:\Users\Xin\Documents\Files\U of Calgary\Courses\CPSC 481\Projects\Project Code\Project Code\obj\Debug\Project Code.csproj.GenerateResource.Cache
-C:\Users\Xin\Documents\Files\U of Calgary\Courses\CPSC 481\Projects\Project Code\Project Code\obj\Debug\Project Code.exe
-C:\Users\Xin\Documents\Files\U of Calgary\Courses\CPSC 481\Projects\Project Code\Project Code\obj\Debug\Project Code.pdb
