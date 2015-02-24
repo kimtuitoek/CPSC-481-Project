@@ -34,7 +34,7 @@
             // 
             // button1
             // 
-<<<<<<< HEAD
+
             this.button1.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button1.Location = new System.Drawing.Point(350, 143);
@@ -43,18 +43,8 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "SIGN IN";
             this.button1.UseVisualStyleBackColor = true;
-=======
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.button1.Location = new System.Drawing.Point(703, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 38);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Quit";
-            this.button1.UseVisualStyleBackColor = false;
->>>>>>> origin/master
+
+          
             // 
             // Form1
             // 
