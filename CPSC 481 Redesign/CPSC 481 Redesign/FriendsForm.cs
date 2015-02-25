@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CPSC_481_Redesign
 {
-    public partial class Form2 : Form
+    public partial class FriendsForm : Form
     {
-        public Form2()
+        public FriendsForm()
         {
             InitializeComponent();
         }
