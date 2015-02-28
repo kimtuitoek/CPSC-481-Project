@@ -21,7 +21,7 @@
                 </Button.RenderTransform>
             </Button>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Right" Margin="417,0,0,0" VerticalAlignment="Top">
+        <StackPanel HorizontalAlignment="Right" Margin="0" VerticalAlignment="Top">
             <Button Content="QUIT" HorizontalAlignment="Left" VerticalAlignment="Top" Height="31" Width="67" Background="Black" BorderBrush="White" Foreground="White" BorderThickness="4" FontFamily="Impact" FontSize="20"/>
         </StackPanel>
 

@@ -16,6 +16,9 @@
             <Button x:Name="dummy_button4" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Height="42" Visibility="Hidden"/>
             <Button x:Name="sign_in" Content="SIGN IN" HorizontalAlignment="Center" VerticalAlignment="Top" Width="105" Height="47" Background="Black" BorderBrush="White" Foreground="#FFFDFDFD" BorderThickness="4" FontFamily="Impact" FontSize="20"/>
         </StackPanel>
+        <StackPanel HorizontalAlignment="Right" Margin="0" VerticalAlignment="Top">
+            <Button Content="QUIT" HorizontalAlignment="Left" VerticalAlignment="Top" Width="93" Height="31" Background="Black" BorderBrush="White" Foreground="White" FontFamily="Impact" FontSize="20" BorderThickness="4"/>
+        </StackPanel>
 
     </Grid>
 </Window>
