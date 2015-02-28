@@ -4,6 +4,18 @@
         Title="Sign In" Height="480" Width="640" MinWidth="640" MinHeight="480">
     <Grid>
         <Image Source="Sign In 02.jpg" Stretch="Fill"/>
+        <StackPanel HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center">
+
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Enter Your User Name" VerticalAlignment="Top" Height="28" Width="175" Foreground="White" FontFamily="Impact" FontSize="20"/>
+            <Button x:Name="dummy_button1" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="81" Height="14" Visibility="Hidden"/>
+            <TextBox x:Name="username" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" FontFamily="Impact" FontSize="20"/>
+            <Button x:Name="dummy_button2" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Height="26" Visibility="Hidden"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="174" FontFamily="Impact" FontSize="20" Foreground="White"><Run Text="Enter Your Password"/></TextBlock>
+            <Button x:Name="dummy_button3" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Height="24" Visibility="Hidden"/>
+            <TextBox x:Name="password" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" FontFamily="Impact" FontSize="20"/>
+            <Button x:Name="dummy_button4" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Height="42" Visibility="Hidden"/>
+            <Button x:Name="sign_in" Content="SIGN IN" HorizontalAlignment="Center" VerticalAlignment="Top" Width="105" Height="47" Background="Black" BorderBrush="White" Foreground="#FFFDFDFD" BorderThickness="4" FontFamily="Impact" FontSize="20"/>
+        </StackPanel>
 
     </Grid>
 </Window>
