@@ -56,9 +56,6 @@
     <Compile Include="Friends.xaml.cs">
       <DependentUpon>Friends.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SignIn.xaml.cs">
-      <DependentUpon>SignIn.xaml</DependentUpon>
-    </Compile>
     <Page Include="Friends.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
