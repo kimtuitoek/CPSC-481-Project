@@ -22,7 +22,7 @@
                 <Button x:Name="CreateAccountButton1" Content="Create Account" HorizontalAlignment="Left" VerticalAlignment="Top" Width="143" Foreground="#FFFDFDFD" FontSize="20" Background="#FF0A0000"/>
             </StackPanel>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Right" Margin="0" VerticalAlignment="Top">
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top">
             <Button x:Name="CreateAccountButton" Content="Quit" HorizontalAlignment="Right" Margin="0" VerticalAlignment="Top" Width="62" RenderTransformOrigin="1.387,-0.3" Background="#FF0E0202" FontSize="20" BorderBrush="#FFF5EBEB" Foreground="#FFFBF7F7" Height="31"/>
         </StackPanel>
     </Grid>
