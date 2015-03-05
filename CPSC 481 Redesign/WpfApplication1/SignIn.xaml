@@ -3,8 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Sign In" Height="480" Width="640" MinWidth="640" MinHeight="480">
     <Grid>
-        <Image Source="Sign In 02.jpg" Stretch="Fill"/>
-        <StackPanel HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="105*"/>
+            <ColumnDefinition Width="527*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="Sign In 02.jpg" Stretch="Fill" Grid.ColumnSpan="2"/>
+        <StackPanel HorizontalAlignment="Center" Margin="113,94,218,93" VerticalAlignment="Center" Grid.Column="1">
 
             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Enter Your User Name" VerticalAlignment="Top" Height="28" Width="175" Foreground="White" FontFamily="Impact" FontSize="20"/>
             <Button x:Name="dummy_button1" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="81" Height="14" Visibility="Hidden"/>
@@ -14,9 +18,9 @@
             <Button x:Name="dummy_button3" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="65" Height="24" Visibility="Hidden"/>
             <TextBox x:Name="password" HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" FontFamily="Impact" FontSize="20"/>
             <Button x:Name="dummy_button4" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="79" Height="42" Visibility="Hidden"/>
-            <Button x:Name="sign_in" Content="SIGN IN" HorizontalAlignment="Center" VerticalAlignment="Top" Width="105" Height="47" Background="Black" BorderBrush="White" Foreground="#FFFDFDFD" BorderThickness="4" FontFamily="Impact" FontSize="20"/>
+            <Button x:Name="sign_in" Content="SIGN IN" HorizontalAlignment="Center" VerticalAlignment="Top" Width="104" Height="47" Background="Black" BorderBrush="White" Foreground="#FFFDFDFD" BorderThickness="4" FontFamily="Impact" FontSize="20"/>
         </StackPanel>
-        <StackPanel HorizontalAlignment="Right" Margin="0" VerticalAlignment="Top">
+        <StackPanel HorizontalAlignment="Right" Margin="0" VerticalAlignment="Top" Grid.Column="1">
             <Button Content="QUIT" HorizontalAlignment="Left" VerticalAlignment="Top" Width="93" Height="31" Background="Black" BorderBrush="White" Foreground="White" FontFamily="Impact" FontSize="20" BorderThickness="4"/>
         </StackPanel>
 
