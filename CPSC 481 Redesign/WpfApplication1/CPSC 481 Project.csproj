@@ -56,11 +56,8 @@
     <Compile Include="Friends.xaml.cs">
       <DependentUpon>Friends.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CreateAccount.xaml.cs">
-      <DependentUpon>CreateAccount.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CreateAccountSuccess.xaml.cs">
-      <DependentUpon>CreateAccountSuccess.xaml</DependentUpon>
+    <Compile Include="SignIn.xaml.cs">
+      <DependentUpon>SignIn.xaml</DependentUpon>
     </Compile>
     <Page Include="Friends.xaml">
       <SubType>Designer</SubType>
