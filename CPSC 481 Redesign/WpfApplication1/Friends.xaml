@@ -5,18 +5,39 @@ Title="Friends" Height="480" Width="640" MinWidth="640" MinHeight="480">
     <Grid>
         <Image Source="Sign In 02.jpg" Stretch="Fill"/>
         <StackPanel Margin="50,0,0,0" VerticalAlignment="Center">
-            <ListBox HorizontalAlignment="Left" Height="289" VerticalAlignment="Top" Width="230">
-                <StackPanel Height="100" Width="179" Orientation="Horizontal">
+            <ListBox HorizontalAlignment="Left" Height="289" VerticalAlignment="Top" Width="230" Background="{x:Null}">
+                <StackPanel Height="100" Width="204" Orientation="Horizontal">
+                    <StackPanel.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                            <GradientStop Color="#FFE5EA80" Offset="0.053"/>
+                            <GradientStop Color="#FFF08011" Offset="0.732"/>
+                        </LinearGradientBrush>
+                    </StackPanel.Background>
                     <Image Width="62" Margin="0" HorizontalAlignment="Left" Source="C:\Users\Xin\Documents\Files\U of Calgary\Courses\CPSC 481\Projects\Project Code\Project Code\img\Calgary 01.jpg"/>
-                    <TextBlock TextWrapping="Wrap" Text="Sukhdeep Bratch" Width="118" FontSize="20" FontFamily="Impact" VerticalAlignment="Center"/>
+                    <Button x:Name="dummy" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Height="90" Visibility="Hidden"/>
+                    <TextBlock TextWrapping="Wrap" Text="Sukhdeep Bratch" Width="118" FontSize="20" VerticalAlignment="Center" Foreground="#FFF9F5F5"/>
                 </StackPanel>
-                <StackPanel Height="100" Width="179" Orientation="Horizontal">
+                <StackPanel Height="100" Width="203" Orientation="Horizontal">
+                    <StackPanel.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFEFEA80" Offset="0.053"/>
+                            <GradientStop Color="#FFF08011" Offset="0.732"/>
+                        </LinearGradientBrush>
+                    </StackPanel.Background>
                     <Image Width="62" HorizontalAlignment="Left" Source="C:\Users\Xin\Documents\Files\U of Calgary\Courses\CPSC 481\Projects\Project Code\Project Code\img\Montreal 01.jpg"/>
-                    <TextBlock TextWrapping="Wrap" Text="Xin Ji" Width="118" FontFamily="Impact" FontSize="20" VerticalAlignment="Center"/>
+                    <Button x:Name="dummy1" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Height="90" Visibility="Hidden"/>
+                    <TextBlock TextWrapping="Wrap" Text="Xin Ji" Width="118" FontFamily="Impact" FontSize="20" VerticalAlignment="Center" Foreground="White"/>
                 </StackPanel>
-                <StackPanel Height="100" Width="188" Orientation="Horizontal">
+                <StackPanel Height="100" Width="200" Orientation="Horizontal">
+                    <StackPanel.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFE5EA80" Offset="0.053"/>
+                            <GradientStop Color="#FFF08011" Offset="0.732"/>
+                        </LinearGradientBrush>
+                    </StackPanel.Background>
                     <Image Width="62" Source="C:\Users\Xin\Documents\Files\U of Calgary\Courses\CPSC 481\Projects\Project Code\Project Code\img\Montreal 05.jpg"/>
-                    <TextBlock TextWrapping="Wrap" Text="Kimalel Tuitoek" Width="126" FontFamily="Impact" FontSize="20" VerticalAlignment="Center"/>
+                    <Button x:Name="dummy2" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="33" Height="74" Visibility="Hidden"/>
+                    <TextBlock TextWrapping="Wrap" Text="Kimalel Tuitoek" Width="126" FontFamily="Impact" FontSize="20" VerticalAlignment="Center" Foreground="White"/>
                 </StackPanel>
             </ListBox>
         </StackPanel>

@@ -17,9 +17,9 @@ namespace WpfApplication1
     /// <summary>
     /// Interaction logic for CreateUserAccount.xaml
     /// </summary>
-    public partial class CreateUserAccount : Window
+    public partial class Window1 : Window
     {
-        public CreateUserAccount()
+        public Window1()
         {
             InitializeComponent();
         }
