@@ -15,7 +15,7 @@ Title="Friends" Height="480" Width="640" MinWidth="640" MinHeight="480">
                     </StackPanel.Background>
                     <Image Width="62" Margin="0" HorizontalAlignment="Left" Source="images.jpg"/>
                     <Button x:Name="dummy" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Height="90" Visibility="Hidden"/>
-                    <TextBlock TextWrapping="Wrap" Text="Sukhdeep Bratch  Lvl 50" Width="118" FontSize="20" VerticalAlignment="Center" Foreground="#FFF9F5F5"/>
+                    <TextBlock TextWrapping="Wrap" Text="Sukhdeep Bratch  lvl 50" Width="118" FontSize="20" VerticalAlignment="Center" Foreground="#FFF9F5F5"/>
                 </StackPanel>
                 <StackPanel Height="75" Width="233" Orientation="Horizontal">
                     <StackPanel.Background>
