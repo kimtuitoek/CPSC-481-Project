@@ -1,11 +1,11 @@
 ﻿<Window x:Class="WpfApplication1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="WELCOME TO BATTLEFIELD 3" Height="606.866" Width="935.523" WindowStartupLocation="CenterScreen" MinWidth="640" MinHeight="480">
+        Title="WELCOME TO BATTLEFIELD 3" Height="606.866" Width="935.523" WindowStartupLocation="CenterScreen" MinWidth="640" MinHeight="480" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize">
     <Window.Background>
         <ImageBrush ImageSource="Sign In 02.jpg"/>
     </Window.Background>
-    <Grid HorizontalAlignment="Left" Height="576" VerticalAlignment="Top" Width="926">
+    <Grid Height="576" Width="926">
         <Button x:Name="CreateAccountButton" Content="Quit" HorizontalAlignment="Right" Margin="0" Width="62" RenderTransformOrigin="1.387,-0.3" Background="#FF0E0202" FontSize="20" BorderBrush="#FFF5EBEB" Foreground="#FFFBF7F7" Height="31" VerticalContentAlignment="Top" VerticalAlignment="Top" HorizontalContentAlignment="Center" IsManipulationEnabled="True">
             <Button.RenderTransform>
                 <TransformGroup>
@@ -24,7 +24,7 @@
                 </TransformGroup>
             </Button.LayoutTransform>
         </Button>
-        <Grid Margin="352,159,298,202">
+        <Grid Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock x:Name="MainWindwoUsernameTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Enter Username:" VerticalAlignment="Top" Width="146" Height="28" Foreground="#FFFBF7F7" FontSize="20" AllowDrop="True"/>
             <TextBox x:Name="MainWindowUserNameTextBox" HorizontalAlignment="Left" Height="20" Margin="0,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276"/>
             <TextBlock x:Name="MainWindwoPasswordTextBlock" HorizontalAlignment="Left" Margin="0,85,0,0" TextWrapping="Wrap" Text="Enter Username:" VerticalAlignment="Top" Width="146" Height="28" Foreground="#FFFBF7F7" FontSize="20" AllowDrop="True"/>
@@ -32,5 +32,6 @@
             <Button x:Name="MainWindowCreateAccountButton" Content="Create Account" HorizontalAlignment="Left" Margin="0,184,0,0" VerticalAlignment="Top" Width="143" Foreground="#FFFDFDFD" FontSize="20" Background="#FF0A0000"/>
             <Button x:Name="MainWindowSignInButton" Content="Sign In" HorizontalAlignment="Left" Margin="187,184,0,0" VerticalAlignment="Top" Width="89" Foreground="#FFFDFDFD" FontSize="20" Background="#FF0A0000"/>
         </Grid>
+        <StackPanel HorizontalAlignment="Left" Height="100" Margin="776,298,0,0" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>

@@ -1,7 +1,7 @@
 ﻿<Window x:Name="CreateUserAccount" x:Class="WpfApplication1.Window1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Create New Account" Height="480" Width="640" Icon="Sign In 02.jpg" ShowInTaskbar="False">
+        Title="Create New Account" Height="480" Width="640" Icon="Sign In 02.jpg" ShowInTaskbar="False" ResizeMode="CanMinimize">
     <Window.Background>
         <ImageBrush ImageSource="Sign In 02.jpg"/>
     </Window.Background>
