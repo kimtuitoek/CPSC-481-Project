@@ -13,7 +13,7 @@
             <Button x:Name="dummy1" Content="dummy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Visibility="Hidden"/>
             <Button Content="PLAY" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="47" Background="Black" BorderBrush="White" Foreground="White" BorderThickness="4" FontSize="20"/>
         </StackPanel>
-        <Button Content="Quit" HorizontalAlignment="Left" Margin="560,0,0,0" VerticalAlignment="Top" Width="62" RenderTransformOrigin="1.387,-0.3" Background="#FF0E0202" FontSize="20" BorderBrush="#FFF5EBEB" Foreground="#FFFBF7F7" Height="31"/>
+        <Button Content="Quit" HorizontalAlignment="Left" Margin="550,0,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="1.387,-0.3" Background="#FF0E0202" FontSize="20" BorderBrush="#FFF5EBEB" Foreground="#FFFBF7F7" Height="45" BorderThickness="4"/>
 
     </Grid>
 </Window>

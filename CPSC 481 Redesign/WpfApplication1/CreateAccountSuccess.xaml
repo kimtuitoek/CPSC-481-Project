@@ -7,8 +7,8 @@
     </Window.Background>
     <Grid HorizontalAlignment="Left" Height="469" VerticalAlignment="Top" Width="757">
         <TextBlock x:Name="SuccessMessageTextBlock" HorizontalAlignment="Left" Margin="117,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="102" Width="563" FontSize="40" Foreground="#FFFFFDFD" Background="#FF0A0000"><Run Text="                 "/><Run Text="Success! "/><LineBreak/><Run Text="You Now Have A New Account."/></TextBlock>
-        <Button x:Name="CreateAccountButton" Content="Quit" HorizontalAlignment="Left" Margin="685,10,0,0" VerticalAlignment="Top" Width="62" RenderTransformOrigin="1.387,-0.3" Background="#FF0E0202" FontSize="20" BorderBrush="#FFF5EBEB" Foreground="#FFFBF7F7" Height="31"/>
-        <Button x:Name="SuccessWindowFriendButton" Content="Friends" HorizontalAlignment="Left" Margin="330,253,0,0" VerticalAlignment="Top" Width="135" Background="#FF080000" AllowDrop="True" FontSize="20" Foreground="#FFFBF7F7" Height="52"/>
-        <Button x:Name="SuccessWindowGroupsButton" Content="Groups" HorizontalAlignment="Left" Margin="330,332,0,0" VerticalAlignment="Top" Width="135" Background="#FF080000" AllowDrop="True" FontSize="20" Foreground="#FFFBF7F7" Height="52"/>
+        <Button x:Name="SuccessWindowFriendButton" Content="Friends" HorizontalAlignment="Left" Margin="330,253,0,0" VerticalAlignment="Top" Width="135" Background="#FF080000" AllowDrop="True" FontSize="20" Foreground="#FFFBF7F7" Height="52" BorderBrush="White" BorderThickness="4"/>
+        <Button x:Name="SuccessWindowGroupsButton" Content="Groups" HorizontalAlignment="Left" Margin="330,332,0,0" VerticalAlignment="Top" Width="135" Background="#FF080000" AllowDrop="True" FontSize="20" Foreground="#FFFBF7F7" Height="52" BorderBrush="White" BorderThickness="4"/>
+        <Button Content="Quit" HorizontalAlignment="Left" Margin="683,0,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="1.387,-0.3" Background="#FF0E0202" FontSize="20" BorderBrush="#FFF5EBEB" Foreground="#FFFBF7F7" Height="45" BorderThickness="4"/>
     </Grid>
 </Window>
