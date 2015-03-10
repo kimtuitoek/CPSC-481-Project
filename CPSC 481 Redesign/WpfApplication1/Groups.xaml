@@ -113,7 +113,7 @@
                     <CheckBox Content="" VerticalAlignment="Center"/>
                 </StackPanel>
             </ListBox>
-            <TextBox HorizontalAlignment="Left" Height="36" Margin="491,-23,-216,0" TextWrapping="Wrap" Text="Other Groups" VerticalAlignment="Top" Width="173" Foreground="White" FontSize="20" Background="{x:Null}" BorderBrush="{x:Null}"/>
+            <TextBox HorizontalAlignment="Left" Height="36" Margin="425,-23,-150,0" TextWrapping="Wrap" Text="Other Groups" VerticalAlignment="Top" Width="173" Foreground="White" FontSize="20" Background="{x:Null}" BorderBrush="{x:Null}"/>
             <TextBox HorizontalAlignment="Left" Height="36" Margin="0,-26,0,0" TextWrapping="Wrap" Text="Your groups" VerticalAlignment="Top" Width="116" Foreground="White" FontSize="20" Background="Black" BorderBrush="{x:Null}"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="100" Margin="10,-31,0,0" VerticalAlignment="Top" Width="226">

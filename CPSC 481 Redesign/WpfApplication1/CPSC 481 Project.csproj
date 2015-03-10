@@ -59,6 +59,9 @@
     <Compile Include="Friends.xaml.cs">
       <DependentUpon>Friends.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Groups.xaml.cs">
+      <DependentUpon>Groups.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
@@ -72,6 +75,10 @@
     <Page Include="Friends.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Groups.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Home.xaml">
       <SubType>Designer</SubType>
@@ -136,6 +143,9 @@
     <Resource Include="images01.jpg" />
     <Resource Include="Montreal 01.jpg" />
     <Resource Include="photo.jpg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="noob.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
