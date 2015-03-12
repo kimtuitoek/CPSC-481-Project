@@ -68,6 +68,9 @@
     <Compile Include="SignIn.xaml.cs">
       <DependentUpon>SignIn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SignInError.xaml.cs">
+      <DependentUpon>SignInError.xaml</DependentUpon>
+    </Compile>
     <Page Include="CreateUserAccount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -103,6 +106,10 @@
     <Page Include="SignIn.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SignInError.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +153,27 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="noob.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="rush.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="knife.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="tank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Sniper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Rub_al_Khali_002.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Jeep.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Elite.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

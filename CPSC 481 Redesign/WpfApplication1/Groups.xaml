@@ -5,7 +5,7 @@
     <Grid>
         <Image Source="Sign In 02.jpg" Stretch="Fill" Margin="0,-15,0,-17"/>
         <Grid Margin="32,69,314,93" VerticalAlignment="Center">
-            <ListBox HorizontalAlignment="Left" Height="312" VerticalAlignment="Top" Width="300" Background="{x:Null}" BorderThickness="0" Margin="0,10,0,-10">
+            <ListBox HorizontalAlignment="Left" Height="312" VerticalAlignment="Top" Width="300" Background="{x:Null}" BorderThickness="0" Margin="-43,-36,0,0">
                 <StackPanel Height="75" Width="270" Orientation="Horizontal">
                     <StackPanel.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -26,7 +26,7 @@
                             <GradientStop Color="#FFF08011" Offset="0.732"/>
                         </LinearGradientBrush>
                     </StackPanel.Background>
-                    <Image Width="62" HorizontalAlignment="Left" Source="Elite.jpe"/>
+                    <Image Width="62" HorizontalAlignment="Left" Source="Elite.jpg"/>
                     <Button x:Name="dummy1" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Height="90" Visibility="Hidden"/>
                     <TextBlock TextWrapping="Wrap" Text="Elite squad" Width="118" FontSize="20" VerticalAlignment="Center" Foreground="White"/>
                     <Button x:Name="dummy1_Copy" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="33" Height="90" Margin="0,0,0,-15" Visibility="Hidden"/>
@@ -39,7 +39,7 @@
                             <GradientStop Color="#FFF08011" Offset="0.732"/>
                         </LinearGradientBrush>
                     </StackPanel.Background>
-                    <Image Width="62" Source="Rub_al_Khali_002.jpg"/>
+                    <Image Width="62" Source="Rub_al_Khali_002.JPG"/>
                     <Button x:Name="dummy2" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="33" Height="74" Visibility="Hidden"/>
                     <TextBlock TextWrapping="Wrap" Text="Desert Map" Width="118" FontSize="20" VerticalAlignment="Center" Foreground="White"/>
                     <Button x:Name="dummy2_Copy" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="33" Height="74" Visibility="Hidden"/>
