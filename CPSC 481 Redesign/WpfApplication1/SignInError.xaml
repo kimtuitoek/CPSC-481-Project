@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="SingInError" Height="606.866" Width="935.523">
     <Window.Background>
-        <ImageBrush ImageSource="Sign In 02.jpg"/>
+        <ImageBrush ImageSource="Sign In 02.jpg" Opacity="0.6"/>
     </Window.Background>
     <Grid>
         <Grid Margin="327,217,310,116" HorizontalAlignment="Center" VerticalAlignment="Center" Height="243" Width="291">

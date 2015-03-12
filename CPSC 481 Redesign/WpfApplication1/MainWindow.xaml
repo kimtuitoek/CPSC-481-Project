@@ -3,13 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="WELCOME TO BATTLEFIELD 3" Height="606.866" Width="935.523" WindowStartupLocation="CenterScreen" MinWidth="640" MinHeight="480" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize">
     <Window.Background>
-        <ImageBrush ImageSource="Sign In 02.jpg"/>
+        <ImageBrush ImageSource="Sign In 02.jpg" Opacity="0.6"/>
     </Window.Background>
     <Grid Height="576" Width="926">
         <Grid Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock x:Name="MainWindwoUsernameTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Enter Username:" VerticalAlignment="Top" Width="146" Height="28" Foreground="#FFFBF7F7" FontSize="20" AllowDrop="True" Background="Black"/>
             <TextBox x:Name="MainWindowUserNameTextBox" HorizontalAlignment="Left" Height="20" Margin="0,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276"/>
-            <TextBlock x:Name="MainWindwoPasswordTextBlock" HorizontalAlignment="Left" Margin="0,85,0,0" TextWrapping="Wrap" Text="Enter Username:" VerticalAlignment="Top" Width="146" Height="28" Foreground="#FFFBF7F7" FontSize="20" AllowDrop="True" Background="Black"/>
+            <TextBlock x:Name="MainWindwoPasswordTextBlock" HorizontalAlignment="Left" Margin="0,85,0,0" TextWrapping="Wrap" Text="Enter Password:" VerticalAlignment="Top" Width="146" Height="28" Foreground="#FFFBF7F7" FontSize="20" AllowDrop="True" Background="Black"/>
             <TextBox x:Name="MainWindowPasswordTextBox" HorizontalAlignment="Left" Height="20" Margin="0,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276"/>
             <Button x:Name="MainWindowCreateAccountButton" Content="Create Account" HorizontalAlignment="Left" Margin="0,184,0,0" VerticalAlignment="Top" Width="143" Foreground="#FFFDFDFD" FontSize="20" Background="#FF0A0000" BorderThickness="4" BorderBrush="White"/>
             <Button x:Name="MainWindowSignInButton" Content="Sign In" HorizontalAlignment="Left" Margin="187,184,0,0" VerticalAlignment="Top" Width="89" Foreground="#FFFDFDFD" FontSize="20" Background="#FF0A0000" BorderBrush="White" BorderThickness="4"/>

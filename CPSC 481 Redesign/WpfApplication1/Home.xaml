@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Home" Height="480" Width="640">
     <Window.Background>
-        <ImageBrush ImageSource="Sign In 02.jpg"/>
+        <ImageBrush ImageSource="Sign In 02.jpg" Opacity="0.6"/>
     </Window.Background>
     <Grid HorizontalAlignment="Center">
         <StackPanel HorizontalAlignment="Center" Height="228" Margin="0" VerticalAlignment="Center" Width="160">

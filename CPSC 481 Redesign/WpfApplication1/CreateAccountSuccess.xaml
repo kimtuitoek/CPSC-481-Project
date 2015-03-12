@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Account Created" Height="502.092" Width="766.946" ResizeMode="CanMinimize">
     <Window.Background>
-        <ImageBrush ImageSource="Sign In 02.jpg"/>
+        <ImageBrush ImageSource="Sign In 02.jpg" Opacity="0.6"/>
     </Window.Background>
     <Grid HorizontalAlignment="Left" Height="469" VerticalAlignment="Top" Width="757">
         <TextBlock x:Name="SuccessMessageTextBlock" HorizontalAlignment="Left" Margin="117,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="102" Width="563" FontSize="40" Foreground="#FFFFFDFD" Background="#FF0A0000"><Run Text="                 "/><Run Text="Success! "/><LineBreak/><Run Text="You Now Have A New Account."/></TextBlock>

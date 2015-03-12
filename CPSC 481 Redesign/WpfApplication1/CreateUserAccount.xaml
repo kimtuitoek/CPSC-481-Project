@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Create New Account" Height="480" Width="640" Icon="Sign In 02.jpg" ShowInTaskbar="False" ResizeMode="CanMinimize">
     <Window.Background>
-        <ImageBrush ImageSource="Sign In 02.jpg"/>
+        <ImageBrush ImageSource="Sign In 02.jpg" Opacity="0.6"/>
     </Window.Background>
     <Grid Height="446" Width="630">
         <StackPanel Margin="175,120,80,10" HorizontalAlignment="Center" VerticalAlignment="Center" Height="316" Width="375">

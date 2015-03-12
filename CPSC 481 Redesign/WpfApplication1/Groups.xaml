@@ -3,13 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Groups" Height="600" Width="800" MinWidth="640" MinHeight="480" ResizeMode="CanMinimize">
     <Grid>
-        <Image Source="Sign In 02.jpg" Stretch="Fill" Margin="0,-15,0,-17"/>
+        <Image Source="Sign In 02.jpg" Stretch="Fill" Margin="0,-15,0,-17" Opacity="0.6"/>
         <Grid Margin="32,69,314,93" VerticalAlignment="Center">
-            <ListBox HorizontalAlignment="Left" Height="312" VerticalAlignment="Top" Width="300" Background="{x:Null}" BorderThickness="0" Margin="-43,-36,0,0">
+            <ListBox HorizontalAlignment="Left" Height="312" VerticalAlignment="Top" Width="300" Background="{x:Null}" BorderThickness="0" Margin="0,10,0,-10">
                 <StackPanel Height="75" Width="270" Orientation="Horizontal">
                     <StackPanel.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                            <GradientStop Color="#FFE5EA80" Offset="0.053"/>
+                            <GradientStop Color="#FF959954" Offset="0.057"/>
                             <GradientStop Color="#FFF08011" Offset="0.732"/>
                         </LinearGradientBrush>
                     </StackPanel.Background>
@@ -22,7 +22,7 @@
                 <StackPanel Height="75" Width="270" Orientation="Horizontal">
                     <StackPanel.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFEFEA80" Offset="0.053"/>
+                            <GradientStop Color="#FF959954" Offset="0.053"/>
                             <GradientStop Color="#FFF08011" Offset="0.732"/>
                         </LinearGradientBrush>
                     </StackPanel.Background>
@@ -35,7 +35,7 @@
                 <StackPanel Height="75" Width="270" Orientation="Horizontal">
                     <StackPanel.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFE5EA80" Offset="0.053"/>
+                            <GradientStop Color="#FF959954" Offset="0.053"/>
                             <GradientStop Color="#FFF08011" Offset="0.732"/>
                         </LinearGradientBrush>
                     </StackPanel.Background>
@@ -48,7 +48,7 @@
                 <StackPanel Height="75" Width="270" Orientation="Horizontal">
                     <StackPanel.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFE5EA80" Offset="0.053"/>
+                            <GradientStop Color="#FF959954" Offset="0.053"/>
                             <GradientStop Color="#FFF08011" Offset="0.732"/>
                         </LinearGradientBrush>
                     </StackPanel.Background>
@@ -63,7 +63,7 @@
                 <StackPanel Height="75" Width="270" Orientation="Horizontal">
                     <StackPanel.Background>
                         <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                            <GradientStop Color="#FFE5EA80" Offset="0.053"/>
+                            <GradientStop Color="#FF959954" Offset="0.053"/>
                             <GradientStop Color="#FFF08011" Offset="0.732"/>
                         </LinearGradientBrush>
                     </StackPanel.Background>
@@ -76,7 +76,7 @@
                 <StackPanel Height="75" Width="270" Orientation="Horizontal">
                     <StackPanel.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFEFEA80" Offset="0.053"/>
+                            <GradientStop Color="#FF959954" Offset="0.053"/>
                             <GradientStop Color="#FFF08011" Offset="0.732"/>
                         </LinearGradientBrush>
                     </StackPanel.Background>
@@ -89,7 +89,7 @@
                 <StackPanel Height="75" Width="270" Orientation="Horizontal">
                     <StackPanel.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFE5EA80" Offset="0.053"/>
+                            <GradientStop Color="#FF959954" Offset="0.053"/>
                             <GradientStop Color="#FFF08011" Offset="0.732"/>
                         </LinearGradientBrush>
                     </StackPanel.Background>
@@ -102,7 +102,7 @@
                 <StackPanel Height="75" Width="270" Orientation="Horizontal">
                     <StackPanel.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FFE5EA80" Offset="0.053"/>
+                            <GradientStop Color="#FF959954" Offset="0.053"/>
                             <GradientStop Color="#FFF08011" Offset="0.732"/>
                         </LinearGradientBrush>
                     </StackPanel.Background>
@@ -113,11 +113,11 @@
                     <CheckBox Content="" VerticalAlignment="Center"/>
                 </StackPanel>
             </ListBox>
-            <TextBox HorizontalAlignment="Left" Height="36" Margin="425,-23,-150,0" TextWrapping="Wrap" Text="Other Groups" VerticalAlignment="Top" Width="173" Foreground="White" FontSize="20" Background="{x:Null}" BorderBrush="{x:Null}"/>
+            <TextBox HorizontalAlignment="Left" Height="36" Margin="425,-23,-150,0" TextWrapping="Wrap" Text="Other Groups" VerticalAlignment="Top" Width="173" Foreground="White" FontSize="20" Background="Black" BorderBrush="{x:Null}"/>
             <TextBox HorizontalAlignment="Left" Height="36" Margin="0,-26,0,0" TextWrapping="Wrap" Text="Your groups" VerticalAlignment="Top" Width="116" Foreground="White" FontSize="20" Background="Black" BorderBrush="{x:Null}"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="100" Margin="10,-31,0,0" VerticalAlignment="Top" Width="226">
-            <Button Content="FRIENDS" HorizontalAlignment="Left" Margin="-9,544,0,-489" VerticalAlignment="Top" Width="99" Height="45" Background="#FF080808" BorderBrush="White" Foreground="White" FontSize="20" BorderThickness="4"/>
+            <Button Content="FRIENDS" HorizontalAlignment="Left" Margin="108,31,0,0" VerticalAlignment="Top" Width="99" Height="45" Background="#FF080808" BorderBrush="White" Foreground="White" FontSize="20" BorderThickness="4"/>
             <Button Content="PLAY" HorizontalAlignment="Left" VerticalAlignment="Top" Width="99" Height="45" Background="#FF080808" BorderBrush="White" Foreground="White" FontSize="20" BorderThickness="4" Margin="-9,31,0,0"/>
             <Button Content="QUIT" HorizontalAlignment="Left" Margin="669,31,-542,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="1.387,-0.3" Background="#FF0E0202" FontSize="20"  BorderThickness="4" BorderBrush="White" Foreground="White" Height="45"/>
             <Button Content="Leave Group" HorizontalAlignment="Left" Margin="190,524,-86,-451" VerticalAlignment="Top" Width="122" Background="#00000000" Foreground="White" BorderBrush="#FFFFAE00" Height="27" FontSize="18"/>
