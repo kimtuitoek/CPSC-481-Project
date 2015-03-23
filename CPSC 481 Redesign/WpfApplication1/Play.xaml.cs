@@ -23,5 +23,11 @@ namespace WpfApplication1
         {
             InitializeComponent();
         }
+
+        private void GoBackToHome(object sender, RoutedEventArgs e)
+        {
+            Home.home.Show();
+            this.Hide();
+        }
     }
 }

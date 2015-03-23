@@ -7,7 +7,7 @@
     </Window.Background>
     <Grid>
         <Button Content="QUIT" HorizontalAlignment="Left" Margin="526,10,0,0" VerticalAlignment="Top" Width="85" Height="43" BorderBrush="White" Foreground="White" Background="Black" BorderThickness="4" FontSize="20"/>
-        <Button Content="BACK" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Width="86" Height="43" BorderThickness="4" Background="Black" BorderBrush="White" Foreground="White" FontSize="20"/>
+        <Button Content="BACK" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Width="86" Height="43" BorderThickness="4" Background="Black" BorderBrush="White" Foreground="White" FontSize="20" Click="GoBackToHome"/>
 
     </Grid>
 </Window>

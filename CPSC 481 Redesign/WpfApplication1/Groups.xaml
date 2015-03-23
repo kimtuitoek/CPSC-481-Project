@@ -110,14 +110,14 @@
                     <Button x:Name="dummy8" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="33" Height="74" Visibility="Hidden"/>
                     <TextBlock TextWrapping="Wrap" Text="Tanks" Width="118" FontSize="20" VerticalAlignment="Center" Foreground="White"/>
                     <Button x:Name="dummy8_Copy" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="33" Height="74" Visibility="Hidden"/>
-                    <CheckBox Content="" VerticalAlignment="Center"/>
+                    <CheckBox Content="" VerticalAlignment="Center" Margin="0,30"/>
                 </StackPanel>
             </ListBox>
             <TextBox HorizontalAlignment="Left" Height="36" Margin="425,-23,-150,0" TextWrapping="Wrap" Text="Other Groups" VerticalAlignment="Top" Width="173" Foreground="White" FontSize="20" Background="Black" BorderBrush="{x:Null}"/>
             <TextBox HorizontalAlignment="Left" Height="36" Margin="0,-26,0,0" TextWrapping="Wrap" Text="Your groups" VerticalAlignment="Top" Width="116" Foreground="White" FontSize="20" Background="Black" BorderBrush="{x:Null}"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="100" Margin="10,-31,0,0" VerticalAlignment="Top" Width="226">
-            <Button Content="FRIENDS" HorizontalAlignment="Left" Margin="108,31,0,0" VerticalAlignment="Top" Width="99" Height="45" Background="#FF080808" BorderBrush="White" Foreground="White" FontSize="20" BorderThickness="4"/>
+            <Button Content="FRIENDS" HorizontalAlignment="Left" Margin="108,31,0,0" VerticalAlignment="Top" Width="99" Height="45" Background="#FF080808" BorderBrush="White" Foreground="White" FontSize="20" BorderThickness="4" Click="GoToFriends"/>
             <Button Content="PLAY" HorizontalAlignment="Left" VerticalAlignment="Top" Width="99" Height="45" Background="#FF080808" BorderBrush="White" Foreground="White" FontSize="20" BorderThickness="4" Margin="-9,31,0,0"/>
             <Button Content="QUIT" HorizontalAlignment="Left" Margin="669,31,-542,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="1.387,-0.3" Background="#FF0E0202" FontSize="20"  BorderThickness="4" BorderBrush="White" Foreground="White" Height="45"/>
             <Button Content="Leave Group" HorizontalAlignment="Left" Margin="190,524,-86,-451" VerticalAlignment="Top" Width="122" Background="#00000000" Foreground="White" BorderBrush="#FFFFAE00" Height="27" FontSize="18"/>

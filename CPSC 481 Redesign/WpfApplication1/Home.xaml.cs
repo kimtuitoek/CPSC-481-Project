@@ -19,9 +19,27 @@ namespace WpfApplication1
     /// </summary>
     public partial class Home : Window
     {
+        public static Window friends, groups, home, play;
+        
         public Home()
         {
             InitializeComponent();
+            initializeWindows();
+        }
+
+        private void initializeWindows() {
+            friends = new Friends();
+            friends.Hide();
+            groups = new Groups();
+            groups.Hide();
+            home = this;
+            play = new Play();
+            play.Hide();
+        }
+
+        private void OpenFriendsPage(object sender, RoutedEventArgs e) {
+            friends.Show();
+            this.Hide();
         }
     }
 }

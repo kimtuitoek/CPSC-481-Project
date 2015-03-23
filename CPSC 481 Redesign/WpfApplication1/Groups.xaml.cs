@@ -23,5 +23,11 @@ namespace WpfApplication1
         {
             InitializeComponent();
         }
+
+        private void GoToFriends(object sender, RoutedEventArgs e)
+        {
+            Home.friends.Show();
+            this.Hide();
+        }
     }
 }
