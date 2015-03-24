@@ -76,7 +76,7 @@ namespace WpfApplication1
                             StackPanel sp1 = (StackPanel)XamlReader.Load(xr);
 
                             // cloned stackpanel should not have checkbox selected
-                            cb = (CheckBox)sp1.FindName("FriendsCheckBox");
+                            cb = (CheckBox)sp1.Children[4];
                             cb.IsChecked = false;
 
                             // add item to the friend list
@@ -137,8 +137,7 @@ namespace WpfApplication1
             this.Hide();
         }
 
-        private void OpenPlay(object sender, RoutedEventArgs e)
-        {
+        private void OpenPlay(object sender, RoutedEventArgs e) {
             Home.play.Show();
             this.Hide();
         }
