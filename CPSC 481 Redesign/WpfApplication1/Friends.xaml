@@ -6,29 +6,19 @@ Title="Friends" Height="480" Width="640" MinWidth="640" MinHeight="480" ResizeMo
         <ImageBrush/>
     </Window.Background>
     <Grid>
-        <Image Source="Sign In 02.jpg" Stretch="Fill" Opacity="0.6"/>
-        <StackPanel Margin="50,80,296,80" VerticalAlignment="Center">
-            <ListBox x:Name="FriendsBox" HorizontalAlignment="Left" Height="289" VerticalAlignment="Top" Width="273" Background="{x:Null}" BorderThickness="0">
-                <StackPanel x:Name="Xin" Height="75" Width="233" Orientation="Horizontal">
-                    <StackPanel.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF959954" Offset="0.053"/>
-                            <GradientStop Color="#FFF08011" Offset="0.732"/>
-                        </LinearGradientBrush>
-                    </StackPanel.Background>
+        <Image Source="Sign In 02.jpg" Stretch="Fill"/>
+        <StackPanel x:Name="middleBackground" HorizontalAlignment="Left" Height="330" Margin="0,62,0,0" VerticalAlignment="Top" Width="634" Background="#FFECECEC"/>
+        <StackPanel Margin="50,81,296,112" VerticalAlignment="Center" Height="258">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text=" My Friends" VerticalAlignment="Top" Height="26" Width="183" Foreground="#FF353535" FontSize="20" FontWeight="Bold"/>
+            <ListBox x:Name="FriendsBox" HorizontalAlignment="Left" Height="219" VerticalAlignment="Top" Width="273" Background="{x:Null}" BorderThickness="0">
+                <StackPanel x:Name="Xin" Height="75" Width="233" Orientation="Horizontal" Background="#FF353535">
                     <Image Width="57" HorizontalAlignment="Left" Source="Montreal 01.jpg" Margin="0,10" Stretch="Fill"/>
                     <Button x:Name="dummy1" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="13" Height="90" Margin="0,0,0,-15" Visibility="Hidden"/>
                     <TextBlock TextWrapping="Wrap" Text="Xin Ji lvl 150" Width="118" FontSize="20" VerticalAlignment="Center" Foreground="White"/>
                     <Button x:Name="dummy1_Copy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="13" Height="90" Margin="0,0,0,-15" Visibility="Hidden"/>
                     <CheckBox x:Name="FriendsCheckBox1" Content="" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,30"/>
                 </StackPanel>
-                <StackPanel x:Name="Kim" Height="75" Width="233" Orientation="Horizontal">
-                    <StackPanel.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF959954" Offset="0.053"/>
-                            <GradientStop Color="#FFF08011" Offset="0.732"/>
-                        </LinearGradientBrush>
-                    </StackPanel.Background>
+                <StackPanel x:Name="Kim" Height="75" Width="233" Orientation="Horizontal" Background="#FF353535">
                     <Image Width="57" Source="images01.jpg" Margin="0,10"/>
                     <Button x:Name="dummy2" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="14" Height="74" Visibility="Hidden"/>
                     <TextBlock TextWrapping="Wrap" Text="Kimalel Tuitoek lvl 100" Width="118" FontSize="20" VerticalAlignment="Center" Foreground="White" Margin="0,-2,0,-3"/>
@@ -38,9 +28,9 @@ Title="Friends" Height="480" Width="640" MinWidth="640" MinHeight="480" ResizeMo
             </ListBox>
         </StackPanel>
         <StackPanel HorizontalAlignment="Left" Height="100" Margin="338,81,0,0" VerticalAlignment="Top" Width="226">
-            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Add New Friend" VerticalAlignment="Top" Height="26" Width="183" Foreground="White" FontSize="20"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Add New Friend" VerticalAlignment="Top" Height="26" Width="183" Foreground="#FF353535" FontSize="20" FontWeight="Bold"/>
             <StackPanel HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="226" Orientation="Horizontal">
-                <TextBox x:Name="FriendsSearchBox" HorizontalAlignment="Left" Height="27" Margin="0,0,-20,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Text="Sukhdeep"/>
+                <TextBox x:Name="FriendsSearchBox" HorizontalAlignment="Left" Height="27" Margin="0,0,-20,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Text="Sukhdeep Bratch"/>
                 <Button x:Name="dummy3" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="20" Visibility="Hidden"/>
                 <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="27" Click="SearchFriend">
                     <Button.Background>
@@ -49,27 +39,21 @@ Title="Friends" Height="480" Width="640" MinWidth="640" MinHeight="480" ResizeMo
                 </Button>
             </StackPanel>
         </StackPanel>
-        <Button Content="GROUP" HorizontalAlignment="Left" Margin="120,0,0,0" VerticalAlignment="Top" Width="99" Height="45" Background="#FF080808" BorderBrush="White" Foreground="White" FontSize="20" BorderThickness="4" Click="OpenGroup"/>
-        <Button Content="Quit" HorizontalAlignment="Left" Margin="560,0,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="1.387,-0.3" Background="#FF0E0202" FontSize="20" BorderBrush="#FFF5EBEB" Foreground="#FFFBF7F7" Height="45" BorderThickness="4" Click="Quit"/>
-        <Button Content="PLAY" HorizontalAlignment="Left" VerticalAlignment="Top" Width="99" Height="45" Background="#FF080808" BorderBrush="White" Foreground="White" FontSize="20" BorderThickness="4" Click="OpenPlay"/>
-        <StackPanel Margin="328,155,26,120" VerticalAlignment="Center" Height="176">
-            <ListBox x:Name="FriendsListBox" HorizontalAlignment="Left" Height="156" VerticalAlignment="Top" Width="273" Background="{x:Null}" BorderThickness="0" Margin="0,0,-45,0">
-                <StackPanel x:Name="Sukhdeep" Height="75" Width="233" Orientation="Horizontal">
-                    <StackPanel.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                            <GradientStop Color="#FF959954" Offset="0.053"/>
-                            <GradientStop Color="#FFF08011" Offset="0.732"/>
-                        </LinearGradientBrush>
-                    </StackPanel.Background>
+        <Button Content="GROUP" HorizontalAlignment="Left" Margin="120,0,0,0" VerticalAlignment="Top" Width="99" Height="45" Background="#FF080808" BorderBrush="#FFDFDFDF" Foreground="White" FontSize="20" BorderThickness="4" Click="OpenGroup"/>
+        <Button Content="Quit" HorizontalAlignment="Left" Margin="560,0,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="1.387,-0.3" Background="#FF0E0202" FontSize="20" BorderBrush="#FFDFDFDF" Foreground="#FFFBF7F7" Height="45" BorderThickness="4" Click="Quit"/>
+        <Button Content="PLAY" HorizontalAlignment="Left" VerticalAlignment="Top" Width="99" Height="45" Background="#FF080808" BorderBrush="#FFDFDFDF" Foreground="White" FontSize="20" BorderThickness="4" Click="OpenPlay"/>
+        <StackPanel Margin="328,155,0,112" VerticalAlignment="Center" Height="184">
+            <ListBox x:Name="FriendsListBox" HorizontalAlignment="Left" Height="133" VerticalAlignment="Top" Width="277" Background="{x:Null}" BorderThickness="0">
+                <StackPanel x:Name="Sukhdeep" Height="75" Width="233" Orientation="Horizontal" Background="#FF353535">
                     <Image x:Name="FriendsImage" Width="56" Margin="0" HorizontalAlignment="Left" Source="images.jpg"/>
                     <Button x:Name="FriendsDummy" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="14" Height="74" Margin="0,0,0,-15" Visibility="Hidden"/>
-                    <TextBlock x:Name="FriendsTextBlock" TextWrapping="Wrap" Text="Sukhdeep Bratch lvl 50" Width="118" FontSize="20" VerticalAlignment="Center" Foreground="#FFF9F5F5" Margin="0,11"/>
+                    <TextBlock x:Name="FriendsTextBlock" TextWrapping="Wrap" Text="Sukhdeep Bratch lvl 50" Width="118" FontSize="20" VerticalAlignment="Center" Foreground="#FFF9F5F5" Margin="0,11,0,10"/>
                     <Button x:Name="dummy" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="14" Height="74" Visibility="Hidden"/>
                     <CheckBox x:Name="FriendsCheckBox" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Height="39" Width="28" Margin="0,31,0,5"/>
                 </StackPanel>
             </ListBox>
         </StackPanel>
-        <Button Content="ADD FRIEND" HorizontalAlignment="Left" Margin="338,356,0,0" VerticalAlignment="Top" Width="119" Height="36" Background="#FF080808" BorderBrush="#FFFFAE00" Foreground="White" FontSize="20" BorderThickness="1" Click="AddFriend"/>
-        <Button Content="UNFRIEND" HorizontalAlignment="Left" Margin="50,356,0,0" VerticalAlignment="Top" Width="107" Height="36" Background="#FF080808" BorderBrush="#FFFFAE00" Foreground="White" FontSize="20" BorderThickness="1" Click="RemoveFriend"/>
+        <Button Content="ADD FRIEND" HorizontalAlignment="Left" Margin="338,344,0,0" VerticalAlignment="Top" Width="119" Height="36" Background="#FF353535" BorderBrush="#FFFFAE00" Foreground="White" FontSize="20" BorderThickness="1" Click="AddFriend"/>
+        <Button Content="UNFRIEND" HorizontalAlignment="Left" Margin="62,344,0,0" VerticalAlignment="Top" Width="107" Height="36" BorderBrush="#FFFFAE00" Foreground="White" FontSize="20" BorderThickness="1" Click="RemoveFriend" Background="#FF353535"/>
     </Grid>
 </Window>
