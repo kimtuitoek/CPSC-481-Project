@@ -41,19 +41,5 @@ namespace WpfApplication1
             friends.Show();
             this.Hide();
         }
-
-        private void Exit(object sender, RoutedEventArgs e) {
-            Environment.Exit(0);
-        }
-
-        private void OpenGroupsPage(object sender, RoutedEventArgs e) {
-            groups.Show();
-            this.Hide();
-        }
-
-        private void OpenPlayPage(object sender, RoutedEventArgs e) {
-            play.Show();
-            this.Hide();
-        }
     }
 }

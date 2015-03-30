@@ -17,48 +17,11 @@ namespace WpfApplication1
     /// <summary>
     /// Interaction logic for CreateUserAccount.xaml
     /// </summary>
-    public partial class CreateUserAccount : Window
+    public partial class Window1 : Window
     {
-        public CreateUserAccount()
+        public Window1()
         {
             InitializeComponent();
-        }
-
-        private void GoToMainWindow(object sender, RoutedEventArgs e) {
-            MainWindow.mainwindow.Show();
-            this.Hide();
-        }
-
-        private void Exit(object sender, RoutedEventArgs e) {
-            Environment.Exit(0);
-        }
-
-        private void CreateAnAccount(object sender, RoutedEventArgs e) {
-            // verify password re-enter match
-            if (!CreateAccountEnterPasswordTextBox.Text.Equals(CreateAccountReEnterPasswordTextBox.Text)) {
-                return;
-            }
-
-            String username = CreateAccountUserNameTextBox.Text;
-            String password = CreateAccountEnterPasswordTextBox.Text;
-
-            try {
-                // save username and password in our database (text file)
-                // source: https://msdn.microsoft.com/en-us/library/8bh11f1k.aspx
-                // source: https://msdn.microsoft.com/en-us/library/system.io.directory.getcurrentdirectory%28v=vs.110%29.aspx
-                String path = System.IO.Directory.GetCurrentDirectory();
-                path += "\\UserAccounts.txt";
-                System.IO.File.AppendAllText(@path, username + " " + password + "\n");
-            }
-            catch(SystemException) {
-                // something wrong with textfile
-                Environment.Exit(0);
-            }
-
-            // log user in if success
-            Window w = new Home();
-            w.Show();
-            this.Hide();
         }
     }
 }

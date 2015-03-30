@@ -1,4 +1,4 @@
-﻿<Window x:Class="WpfApplication1.CreateAccountSuccess"
+﻿<Window x:Class="WpfApplication1.Window2"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Account Created" Height="502.092" Width="766.946" ResizeMode="CanMinimize">
