@@ -9,11 +9,11 @@
         <StackPanel HorizontalAlignment="Center" Height="228" Margin="0" VerticalAlignment="Center" Width="160">
             <Button Content="FRIENDS" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="47" Background="Black" BorderBrush="White" Foreground="White" BorderThickness="4" FontSize="20" Click="OpenFriendsPage"/>
             <Button x:Name="dummy" Content="dummy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="22" Visibility="Hidden"/>
-            <Button Content="GROUPS" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="47" Background="Black" BorderBrush="White" Foreground="White" BorderThickness="4" FontSize="20"/>
+            <Button Content="GROUPS" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="47" Background="Black" BorderBrush="White" Foreground="White" BorderThickness="4" FontSize="20" Click="OpenGroupsPage"/>
             <Button x:Name="dummy1" Content="dummy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Visibility="Hidden"/>
-            <Button Content="PLAY" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="47" Background="Black" BorderBrush="White" Foreground="White" BorderThickness="4" FontSize="20"/>
+            <Button Content="PLAY" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="47" Background="Black" BorderBrush="White" Foreground="White" BorderThickness="4" FontSize="20" Click="OpenPlayPage"/>
         </StackPanel>
-        <Button Content="Quit" HorizontalAlignment="Left" Margin="550,0,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="1.387,-0.3" Background="#FF0E0202" FontSize="20" BorderBrush="#FFF5EBEB" Foreground="#FFFBF7F7" Height="45" BorderThickness="4"/>
+        <Button Content="Quit" HorizontalAlignment="Left" Margin="550,0,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="1.387,-0.3" Background="#FF0E0202" FontSize="20" BorderBrush="#FFF5EBEB" Foreground="#FFFBF7F7" Height="45" BorderThickness="4" Click="Exit"/>
 
     </Grid>
 </Window>
