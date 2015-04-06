@@ -3,55 +3,32 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Groups" Height="600" Width="800" MinWidth="640" MinHeight="480" ResizeMode="CanMinimize">
     <Grid>
-        <Image Source="Sign In 02.jpg" Stretch="Fill" Margin="0" Opacity="0.6" IsManipulationEnabled="True"/>
+        <Image Source="Sign In 02.jpg" Stretch="Fill" Margin="0" IsManipulationEnabled="True"/>
+        <StackPanel x:Name="middleBackground" HorizontalAlignment="Left" Height="511" VerticalAlignment="Top" Width="794" Background="#FFECECEC" Margin="0,60,0,0"/>
         <Grid Margin="32,69,314,93" VerticalAlignment="Center">
-            <ListBox x:Name="YourGroups" HorizontalAlignment="Left" Height="312" VerticalAlignment="Top" Width="300" Background="{x:Null}" BorderThickness="0" Margin="0,10,0,-10">
-                <StackPanel Height="75" Width="270" Orientation="Horizontal">
-                    <StackPanel.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                            <GradientStop Color="#FF959954" Offset="0.057"/>
-                            <GradientStop Color="#FFF08011" Offset="0.732"/>
-                        </LinearGradientBrush>
-                    </StackPanel.Background>
+            <ListBox x:Name="YourGroups" HorizontalAlignment="Left" Height="312" VerticalAlignment="Top" Width="300" Background="{x:Null}" BorderThickness="0" Margin="0,44,0,-44">
+                <StackPanel Height="75" Width="270" Orientation="Horizontal" Background="#FF353535">
                     <Image Width="62" Margin="0" HorizontalAlignment="Left" Source="Sniper.jpg"/>
                     <Button x:Name="dummy" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Height="90" Visibility="Hidden"/>
                     <TextBlock TextWrapping="Wrap" Text="Snipers only" Width="118" FontSize="20" VerticalAlignment="Center" Foreground="#FFF9F5F5"/>
                     <Button x:Name="dummy_Copy" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="33" Height="90" Margin="0,0,0,-15" Visibility="Hidden"/>
                     <CheckBox VerticalAlignment="Center"/>
                 </StackPanel>
-                <StackPanel Height="75" Width="270" Orientation="Horizontal">
-                    <StackPanel.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF959954" Offset="0.053"/>
-                            <GradientStop Color="#FFF08011" Offset="0.732"/>
-                        </LinearGradientBrush>
-                    </StackPanel.Background>
+                <StackPanel Height="75" Width="270" Orientation="Horizontal" Background="#FF353535">
                     <Image Width="62" HorizontalAlignment="Left" Source="Elite.jpg"/>
                     <Button x:Name="dummy1" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Height="90" Visibility="Hidden"/>
                     <TextBlock TextWrapping="Wrap" Text="Elite squad" Width="118" FontSize="20" VerticalAlignment="Center" Foreground="White"/>
                     <Button x:Name="dummy1_Copy" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="33" Height="90" Margin="0,0,0,-15" Visibility="Hidden"/>
                     <CheckBox Content="" VerticalAlignment="Center"/>
                 </StackPanel>
-                <StackPanel Height="75" Width="270" Orientation="Horizontal">
-                    <StackPanel.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF959954" Offset="0.053"/>
-                            <GradientStop Color="#FFF08011" Offset="0.732"/>
-                        </LinearGradientBrush>
-                    </StackPanel.Background>
+                <StackPanel Height="75" Width="270" Orientation="Horizontal" Background="#FF353535">
                     <Image Width="62" Source="Rub_al_Khali_002.JPG"/>
                     <Button x:Name="dummy2" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="33" Height="74" Visibility="Hidden"/>
                     <TextBlock TextWrapping="Wrap" Text="Desert Map" Width="118" FontSize="20" VerticalAlignment="Center" Foreground="White"/>
                     <Button x:Name="dummy2_Copy" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="33" Height="74" Visibility="Hidden"/>
                     <CheckBox VerticalAlignment="Center"/>
                 </StackPanel>
-                <StackPanel Height="75" Width="270" Orientation="Horizontal">
-                    <StackPanel.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF959954" Offset="0.053"/>
-                            <GradientStop Color="#FFF08011" Offset="0.732"/>
-                        </LinearGradientBrush>
-                    </StackPanel.Background>
+                <StackPanel Height="75" Width="270" Orientation="Horizontal" Background="#FF353535">
                     <Image Width="62" Source="Jeep.png"/>
                     <Button x:Name="dummy3" HorizontalAlignment="Left" VerticalAlignment="Top" Width="33" Height="74" Visibility="Hidden"/>
                     <TextBlock TextWrapping="Wrap" Text="Vehicle lovers" Width="118" FontSize="20" VerticalAlignment="Center" Foreground="White"/>
@@ -59,53 +36,29 @@
                     <CheckBox Content="" VerticalAlignment="Center"/>
                 </StackPanel>
             </ListBox>
-            <ListBox x:Name="OtherGroups" HorizontalAlignment="Right" Height="312" VerticalAlignment="Top" Width="300" Background="{x:Null}" BorderThickness="0" Margin="0,13,-277,-13">
-                <StackPanel Height="75" Width="270" Orientation="Horizontal">
-                    <StackPanel.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                            <GradientStop Color="#FF959954" Offset="0.053"/>
-                            <GradientStop Color="#FFF08011" Offset="0.732"/>
-                        </LinearGradientBrush>
-                    </StackPanel.Background>
+            <ListBox x:Name="OtherGroups" HorizontalAlignment="Right" Height="312" VerticalAlignment="Top" Width="300" Background="{x:Null}" BorderThickness="0" Margin="0,47,-277,-47">
+                <StackPanel Height="75" Width="270" Orientation="Horizontal" Background="#FF353535">
                     <Image Width="62" Margin="0" HorizontalAlignment="Left" Source="noob.jpg"/>
                     <Button x:Name="dummy5" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Height="90" Visibility="Hidden"/>
                     <TextBlock TextWrapping="Wrap" Text="Noobs only" Width="118" FontSize="20" VerticalAlignment="Center" Foreground="#FFF9F5F5"/>
                     <Button x:Name="dummy5_Copy" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="33" Height="90" Visibility="Hidden" Margin="0,0,0,-15"/>
                     <CheckBox Content="" VerticalAlignment="Center"/>
                 </StackPanel>
-                <StackPanel Height="75" Width="270" Orientation="Horizontal">
-                    <StackPanel.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF959954" Offset="0.053"/>
-                            <GradientStop Color="#FFF08011" Offset="0.732"/>
-                        </LinearGradientBrush>
-                    </StackPanel.Background>
+                <StackPanel Height="75" Width="270" Orientation="Horizontal" Background="#FF353535">
                     <Image Width="62" HorizontalAlignment="Left" Source="rush.png"/>
                     <Button x:Name="dummy6" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Height="90" Visibility="Hidden"/>
                     <TextBlock TextWrapping="Wrap" Text="Rush Game mode" Width="118" FontSize="20" VerticalAlignment="Center" Foreground="White"/>
                     <Button x:Name="dummy6_Copy" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="33" Height="90" Visibility="Hidden" Margin="0,0,0,-15"/>
                     <CheckBox Content="" VerticalAlignment="Center"/>
                 </StackPanel>
-                <StackPanel Height="75" Width="270" Orientation="Horizontal">
-                    <StackPanel.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF959954" Offset="0.053"/>
-                            <GradientStop Color="#FFF08011" Offset="0.732"/>
-                        </LinearGradientBrush>
-                    </StackPanel.Background>
+                <StackPanel Height="75" Width="270" Orientation="Horizontal" Background="#FF353535">
                     <Image Width="62" Source="knife.png"/>
                     <Button x:Name="dummy7" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="33" Height="74" Visibility="Hidden"/>
                     <TextBlock TextWrapping="Wrap" Text="Knife only" Width="118" FontSize="20" VerticalAlignment="Center" Foreground="White"/>
                     <Button x:Name="dummy7_Copy" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="33" Height="74" Visibility="Hidden"/>
                     <CheckBox Content="" VerticalAlignment="Center"/>
                 </StackPanel>
-                <StackPanel Height="75" Width="270" Orientation="Horizontal">
-                    <StackPanel.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF959954" Offset="0.053"/>
-                            <GradientStop Color="#FFF08011" Offset="0.732"/>
-                        </LinearGradientBrush>
-                    </StackPanel.Background>
+                <StackPanel Height="75" Width="270" Orientation="Horizontal" Background="#FF353535">
                     <Image Width="62" Source="tank.png"/>
                     <Button x:Name="dummy8" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="33" Height="74" Visibility="Hidden"/>
                     <TextBlock TextWrapping="Wrap" Text="Tanks" Width="118" FontSize="20" VerticalAlignment="Center" Foreground="White"/>
@@ -113,27 +66,28 @@
                     <CheckBox Content="" VerticalAlignment="Center" Margin="0,30"/>
                 </StackPanel>
             </ListBox>
-            <TextBox HorizontalAlignment="Left" Height="36" Margin="425,-23,-150,0" TextWrapping="Wrap" Text="Other Groups" VerticalAlignment="Top" Width="173" Foreground="White" FontSize="20" Background="Black" BorderBrush="{x:Null}"/>
-            <TextBox HorizontalAlignment="Left" Height="36" Margin="0,-26,0,0" TextWrapping="Wrap" Text="Your groups" VerticalAlignment="Top" Width="116" Foreground="White" FontSize="20" Background="Black" BorderBrush="{x:Null}"/>
+            <TextBox HorizontalAlignment="Left" Height="36" Margin="425,-23,-183,0" TextWrapping="Wrap" Text="Other Groups" VerticalAlignment="Top" Width="206" Foreground="#FF353535" FontSize="20" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
+            <TextBox HorizontalAlignment="Left" Height="36" Margin="0,-26,0,0" TextWrapping="Wrap" Text="Your groups" VerticalAlignment="Top" Width="207" Foreground="#FF353535" FontSize="20" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="100" Margin="10,-31,0,0" VerticalAlignment="Top" Width="226">
-            <Button Content="FRIENDS" HorizontalAlignment="Left" Margin="108,31,0,0" VerticalAlignment="Top" Width="99" Height="45" Background="#FF080808" BorderBrush="White" Foreground="White" FontSize="20" BorderThickness="4" Click="GoToFriends"/>
-            <Button Content="PLAY" HorizontalAlignment="Left" VerticalAlignment="Top" Width="99" Height="45" Background="#FF080808" BorderBrush="White" Foreground="White" FontSize="20" BorderThickness="4" Margin="-9,31,0,0"/>
-            <Button Content="QUIT" HorizontalAlignment="Left" Margin="669,31,-542,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="1.387,-0.3" Background="#FF0E0202" FontSize="20"  BorderThickness="4" BorderBrush="White" Foreground="White" Height="45"/>
-            <Button x:Name="Leave_group" Content="Leave Group" HorizontalAlignment="Left" Margin="190,524,-86,-451" VerticalAlignment="Top" Width="122" Background="#00000000" Foreground="White" BorderBrush="#FFFFAE00" Height="27" FontSize="18" Click="LeaveGroup"/>
-            <Button x:Name="Join_group" Content="Join Group" HorizontalAlignment="Left" Margin="618,523,-507,-451" VerticalAlignment="Top" Width="115" BorderBrush="#FFFFAE00" Background="#00000000" Foreground="White" FontSize="18" Click="JoinGroup"/>
-            <TextBox HorizontalAlignment="Left" Height="39" Margin="28,479,0,-418" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202"/>
-            <Button Content="" HorizontalAlignment="Left" Margin="235,479,-84,-418" VerticalAlignment="Top" Width="75" Height="39" RenderTransformOrigin="0.467,1.077">
+            <Button Content="GROUPS" HorizontalAlignment="Left" Margin="531,31,-413,0" VerticalAlignment="Top" Width="108" Height="59" Background="#FFFFDFDF" BorderBrush="#FFFFDFDF" Foreground="#FF0E0202" FontSize="20" BorderThickness="4" Click="GoToFriends"/>
+            <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="103" Height="59" Background="#FF080808" BorderBrush="White" Foreground="White" FontSize="20" BorderThickness="4" Margin="-9,31,0,0" Click="OpenPlay" Content="PLAY"/>
+            <Button Content="QUIT" HorizontalAlignment="Left" Margin="683,31,-558,0" VerticalAlignment="Top" Width="101" RenderTransformOrigin="1.387,-0.3" Background="#FF0E0202" FontSize="20"  BorderThickness="4" BorderBrush="White" Foreground="White" Height="59" Click="Quit"/>
+            <Button x:Name="Leave_group" Content="Leave Group" HorizontalAlignment="Left" Margin="188,553,-84,-480" VerticalAlignment="Top" Width="122" Background="#FF353535" Foreground="White" BorderBrush="#FFFFAE00" Height="27" FontSize="18" Click="LeaveGroup"/>
+            <Button x:Name="Join_group" Content="Join Group" HorizontalAlignment="Left" Margin="616,552,-505,-480" VerticalAlignment="Top" Width="115" BorderBrush="#FFFFAE00" Background="#FF353535" Foreground="White" FontSize="18" Click="JoinGroup"/>
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="26,154,-29,-77" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="229"/>
+            <Button Content="" HorizontalAlignment="Left" Margin="260,154,-74,-77" VerticalAlignment="Top" Width="40" Height="23" RenderTransformOrigin="0.467,1.077">
                 <Button.Background>
                     <ImageBrush ImageSource="search-button-without-text-md.png"/>
                 </Button.Background>
             </Button>
-            <Button Content="" HorizontalAlignment="Left" Margin="658,479,-507,-418" VerticalAlignment="Top" Width="75" Height="39">
+            <Button Content="" HorizontalAlignment="Left" Margin="683,154,-497,-77" VerticalAlignment="Top" Width="40" Height="23" Click="SearchGroup" RenderTransformOrigin="0.949,0.609">
                 <Button.Background>
                     <ImageBrush ImageSource="search-button-without-text-md.png"/>
                 </Button.Background>
             </Button>
-            <TextBox HorizontalAlignment="Left" Height="39" Margin="451,479,-427,-418" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202"/>
+            <TextBox x:Name="JoinGroupBox" HorizontalAlignment="Left" Height="23" Margin="444,154,-447,-77" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="229"/>
+            <Button Content="FRIENDS" HorizontalAlignment="Left" Margin="137,31,-19,0" VerticalAlignment="Top" Width="108" Height="59" Background="#FF080808" BorderBrush="White" Foreground="White" FontSize="20" BorderThickness="4" Click="GoToFriends"/>
         </Grid>
 
     </Grid>
