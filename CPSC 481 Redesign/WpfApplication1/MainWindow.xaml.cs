@@ -64,10 +64,14 @@ namespace WpfApplication1
                     }
                 }
 
+                // debug
+                //System.Diagnostics.Debug.WriteLine((delimiter+1) + " " + (line.Length-1));
+                //System.Diagnostics.Debug.WriteLine(line);
+
                 // record username/password
                 String username = line.Substring(0,delimiter);
-                String password = line.Substring(delimiter,line.Length-1);
-                password = password.Substring(1, password.Length - 1);
+                String password = line.Substring(delimiter+1,line.Length-1-delimiter);
+                //password = password.Substring(1, password.Length - 1);
 
                 // debug
                 //System.Diagnostics.Debug.WriteLine("username: " + username + "\npassword: " + password + "\n");
@@ -81,8 +85,22 @@ namespace WpfApplication1
                     Window w = new Home();
                     w.Show();
                     this.Hide();
+
+                    // hide sign in error message after a successful login
+                    SignInErrorBox.Visibility = Visibility.Hidden;
+
                     break;
                 }
+            }
+            
+            // else, login crediental not found
+            SignInErrorBox.Visibility = Visibility.Visible;
+        }
+
+        // sign in if enter is pressed
+        private void CheckEnterAndSignIn(object sender, KeyEventArgs e) {
+            if (e.Key == Key.Enter) {
+                SignIn(sender,e);
             }
         }
     }

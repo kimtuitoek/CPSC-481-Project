@@ -1,20 +1,23 @@
 ﻿<Window x:Class="WpfApplication1.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="WELCOME TO BATTLEFIELD 3" Height="606.866" Width="935.523" WindowStartupLocation="CenterScreen" MinWidth="640" MinHeight="480" SizeToContent="WidthAndHeight" ResizeMode="CanMinimize">
+        Title="WELCOME TO BATTLEFIELD 3" Height="600" Width="800" WindowStartupLocation="CenterScreen" MinWidth="640" MinHeight="480" SizeToContent="WidthAndHeight" ResizeMode="NoResize" KeyDown="CheckEnterAndSignIn" WindowStyle="ToolWindow" Icon="Sign In 02.jpg">
     <Window.Background>
-        <ImageBrush ImageSource="Sign In 02.jpg" Opacity="0.6"/>
+        <ImageBrush ImageSource="Sign In 02.jpg"/>
     </Window.Background>
-    <Grid Height="576" Width="926">
-        <Grid Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock x:Name="MainWindwoUsernameTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Enter Username:" VerticalAlignment="Top" Width="146" Height="28" Foreground="#FFFBF7F7" FontSize="20" AllowDrop="True" Background="Black"/>
-            <TextBox x:Name="MainWindowUserNameTextBox" HorizontalAlignment="Left" Height="20" Margin="0,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276" Text="a"/>
-            <TextBlock x:Name="MainWindwoPasswordTextBlock" HorizontalAlignment="Left" Margin="0,85,0,0" TextWrapping="Wrap" Text="Enter Password:" VerticalAlignment="Top" Width="146" Height="28" Foreground="#FFFBF7F7" FontSize="20" AllowDrop="True" Background="Black"/>
-            <TextBox x:Name="MainWindowPasswordTextBox" HorizontalAlignment="Left" Height="20" Margin="0,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276" Text="b"/>
-            <Button x:Name="MainWindowCreateAccountButton" Content="Create Account" HorizontalAlignment="Left" Margin="0,184,0,0" VerticalAlignment="Top" Width="143" Foreground="#FFFDFDFD" FontSize="20" Background="#FF0A0000" BorderThickness="4" BorderBrush="White" Click="OpenCreateAccount"/>
-            <Button x:Name="MainWindowSignInButton" Content="Sign In" HorizontalAlignment="Left" Margin="187,184,0,0" VerticalAlignment="Top" Width="89" Foreground="#FFFDFDFD" FontSize="20" Background="#FF0A0000" BorderBrush="White" BorderThickness="4" Click="SignIn"/>
-        </Grid>
-        <StackPanel HorizontalAlignment="Left" Height="100" Margin="776,298,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button Content="Quit" HorizontalAlignment="Left" Margin="852,0,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="1.387,-0.3" Background="#FF0E0202" FontSize="20" BorderBrush="#FFF5EBEB" Foreground="#FFFBF7F7" Height="45" BorderThickness="4" Click="Exit"/>
+    <Grid Margin="0,0,-6,-4">
+        <Button Content="Quit" HorizontalAlignment="Left" Margin="696,0,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="1.387,-0.3" Background="#FF353535" FontSize="20" BorderBrush="#FFF5EBEB" Foreground="#FFFBF7F7" Height="59" BorderThickness="4" Click="Exit"/>
+        <StackPanel x:Name="middleBackground" HorizontalAlignment="Left" Height="517" Margin="0,59,0,0" VerticalAlignment="Top" Width="800" Background="#FFECECEC" Orientation="Horizontal">
+            <Button x:Name="dummy4" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="213" Height="271" Visibility="Hidden"/>
+            <Grid Margin="0,150,358,88" HorizontalAlignment="Center" VerticalAlignment="Center" Width="415" Height="279">
+                <TextBlock x:Name="MainWindwoUsernameTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Enter Username:" VerticalAlignment="Top" Width="226" Height="28" Foreground="#FF353535" FontSize="20" AllowDrop="True" FontWeight="Bold"/>
+                <TextBox x:Name="MainWindowUserNameTextBox" HorizontalAlignment="Left" Height="20" Margin="0,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354"/>
+                <TextBlock x:Name="MainWindwoPasswordTextBlock" HorizontalAlignment="Left" Margin="0,85,0,0" TextWrapping="Wrap" Text="Enter Password:" VerticalAlignment="Top" Width="226" Height="28" Foreground="#FF353535" FontSize="20" AllowDrop="True" FontWeight="Bold"/>
+                <TextBox x:Name="MainWindowPasswordTextBox" HorizontalAlignment="Left" Height="20" Margin="0,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354"/>
+                <Button x:Name="MainWindowCreateAccountButton" Content="Create Account" HorizontalAlignment="Left" Margin="0,184,0,0" VerticalAlignment="Top" Width="143" Foreground="#FFFDFDFD" FontSize="20" Background="#FF353535" BorderThickness="2" BorderBrush="#FFFFAE00" Click="OpenCreateAccount"/>
+                <Button x:Name="MainWindowSignInButton" Content="Sign In" HorizontalAlignment="Left" Margin="265,184,0,0" VerticalAlignment="Top" Width="89" Foreground="#FFFDFDFD" FontSize="20" Background="#FF353535" BorderBrush="#FFFFAE00" BorderThickness="2" Click="SignIn"/>
+            </Grid>
+        </StackPanel>
+        <TextBlock x:Name="SignInErrorBox" HorizontalAlignment="Left" Margin="161,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" Height="56" FontSize="20" FontWeight="Bold" Foreground="#FFFB0505" Text="Wrong Username or Password" TextAlignment="Center" Visibility="Hidden"/>
     </Grid>
 </Window>

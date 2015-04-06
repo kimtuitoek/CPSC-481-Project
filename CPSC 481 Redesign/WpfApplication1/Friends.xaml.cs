@@ -82,6 +82,9 @@ namespace WpfApplication1
 
                             // add item to the friend list
                             FriendsBox.Items.Add(sp1);
+
+                            // display this operation on UI
+                            MyFriendsActions.Text = "Friend " + tb.Text + " added";
                         }
                     }
                 }
@@ -120,6 +123,10 @@ namespace WpfApplication1
 
                             // debug
                             //FriendsSearchBox.Text = sp.Name;
+
+                            // display this operation on UI
+                            TextBlock tb = (TextBlock)sp.Children[2];
+                            MyFriendsActions.Text = "Friend " + tb.Text + " removed";
                         }
                     }
                 }
@@ -144,6 +151,13 @@ namespace WpfApplication1
         }
 
         private void SearchFriend(object sender, RoutedEventArgs e) {
+            // do no search if nothing is typed in
+            if (FriendsSearchBox.Text.Equals("")) {
+                FriendsListBox.Items.Clear();   // clear list if nothing is searched
+                MyFriendsSearchActions.Text = "";
+                return;
+            }
+
             // get database
             // source: https://msdn.microsoft.com/en-us/library/ezwyzy7b.aspx
             String path = System.IO.Directory.GetCurrentDirectory();
@@ -155,8 +169,12 @@ namespace WpfApplication1
                 //System.Diagnostics.Debug.WriteLine(content[i]);
             //}
 
+            // clear all existing items in the search panel before adding newly searched items
+            FriendsListBox.Items.Clear();
+
             // retrive name, level, and image, and compare with the requested search
             String requested = FriendsSearchBox.Text;
+            int added = 0;  // keep track of how many items added, later to be displayed
             for (int i = 0; i < content.Length; i++) {
                 String line = content[i];
 
@@ -171,8 +189,23 @@ namespace WpfApplication1
                 //System.Diagnostics.Debug.WriteLine(delimiter);
 
                 // check if this is the requested search
+                
+
+                // debug
+                //System.Diagnostics.Debug.WriteLine("name: " + name.Length + "\nrequested: " + requested.Length);
+                String toCompare;
+                try {
+                    toCompare = name.Substring(0, requested.Length);
+                }
+                catch(ArgumentOutOfRangeException) {
+                    continue;
+                }
+
+                // debug
+                //System.Diagnostics.Debug.WriteLine(toCompare + ' ' + requested);
+
                 // source: https://msdn.microsoft.com/en-us/library/cc165449.aspx
-                if (!requested.Equals(name, StringComparison.OrdinalIgnoreCase)) {
+                if (!requested.Equals(toCompare, StringComparison.OrdinalIgnoreCase)) {
                     continue;
                 }
                 
@@ -199,7 +232,11 @@ namespace WpfApplication1
 
                 // load player information
                 LoadPlayer(name,level,image);
+                added++;
             }
+
+            // display number of matches found on UI
+            MyFriendsSearchActions.Text = "Found " + added + " Matches";
         }
 
         // used by SearchFriend to locate the delimiter ';'
@@ -232,19 +269,21 @@ namespace WpfApplication1
             // set background color
             // source: http://stackoverflow.com/questions/18020779/how-to-use-code-behind-to-create-stackpanel-border-background
             BrushConverter scb = new BrushConverter();
-            sp.Background = (Brush)scb.ConvertFrom("#FFF08011");
+            sp.Background = (Brush)scb.ConvertFrom("#FF353535");
 
             // add image
-            // source: https://msdn.microsoft.com/en-uS/office/office365/windows.ui.xaml.controls.image.source.aspx
+            // source: https://msdn.microsoft.com/en-us/library/system.windows.controls.image.source%28v=vs.110%29.aspx
             Image i = new Image();
             BitmapImage bi = new BitmapImage();
-            //Uri u = new Uri(image);
-            //bi.UriSource = u;
+            bi.BeginInit();
+            Uri u = new Uri(image, UriKind.Relative);
+            bi.UriSource = u;
+            bi.EndInit();
             i.Source = bi;
-            i.Stretch = Stretch.Uniform;
+            i.Stretch = Stretch.Fill;
             i.StretchDirection = StretchDirection.Both;
-            i.Width = 56;
-            i.Height = 56;  // auto in the xaml, not sure how to set it here
+            i.Width = 57;
+            i.Height = 55;  // auto in the xaml, not sure how to set it here
             i.HorizontalAlignment = HorizontalAlignment.Left;
             i.VerticalAlignment = VerticalAlignment.Stretch;
             sp.Children.Add(i);
@@ -258,8 +297,16 @@ namespace WpfApplication1
 
             // add textblock
             TextBlock tb = new TextBlock();
+            tb.Foreground = (Brush)scb.ConvertFrom("#FFF9F5F5");
+            tb.VerticalAlignment = VerticalAlignment.Center;
+            tb.Width = 118;
+            //tb.Height = 80; // auto in the xaml :(
+            tb.FontFamily = new FontFamily("Segoe UI"); // source: https://msdn.microsoft.com/en-us/library/system.windows.controls.textblock.fontfamily%28v=vs.110%29.aspx
+            tb.FontSize = 20;
+            tb.TextWrapping = TextWrapping.Wrap;
+            tb.TextAlignment = TextAlignment.Center;
             tb.Text += name;
-            tb.Text += ' ';
+            tb.Text += " lvl ";
             tb.Text += level;
             sp.Children.Add(tb);
 
@@ -273,6 +320,8 @@ namespace WpfApplication1
 
             // add checkbox
             CheckBox cb = new CheckBox();
+            cb.HorizontalAlignment = HorizontalAlignment.Center;
+            cb.VerticalAlignment = VerticalAlignment.Center;
             sp.Children.Add(cb);
 
             // finally, add this stackpanel to our UI
