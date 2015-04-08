@@ -18,6 +18,6 @@
                 <Button x:Name="MainWindowSignInButton" Content="Sign In" HorizontalAlignment="Left" Margin="265,184,0,0" VerticalAlignment="Top" Width="89" Foreground="#FFFDFDFD" FontSize="20" Background="#FF353535" BorderBrush="#FFFFAE00" BorderThickness="2" Click="SignIn"/>
             </Grid>
         </StackPanel>
-        <TextBlock x:Name="SignInErrorBox" HorizontalAlignment="Left" Margin="161,86,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" Height="56" FontSize="20" FontWeight="Bold" Foreground="#FFFB0505" Text="Wrong Username or Password" TextAlignment="Center" Visibility="Hidden"/>
+        <TextBlock x:Name="SignInErrorBox" x:FieldModifier="public" HorizontalAlignment="Left" Margin="247,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" Height="56" FontSize="20" FontWeight="Bold" Foreground="#FFFB0505" Text="Wrong Username or Password" TextAlignment="Center" Visibility="Hidden"/>
     </Grid>
 </Window>

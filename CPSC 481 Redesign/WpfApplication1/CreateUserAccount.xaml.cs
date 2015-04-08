@@ -37,7 +37,7 @@ namespace WpfApplication1
         // create account if user havnt done so
         // sign in if user created an account
         private void CreateAnAccount(object sender, RoutedEventArgs e) {
-            if (CreateAccountButton1.Content.Equals("Create Account")) {
+            //if (CreateAccountButton1.Content.Equals("Create Account")) {
                 // verify password re-enter match
                 if (!CreateAccountEnterPasswordTextBox.Text.Equals(CreateAccountReEnterPasswordTextBox.Text)) {
                     CreateAccountStatusBox.Text = "Password Re-entered does not match";
@@ -71,19 +71,31 @@ namespace WpfApplication1
                     Environment.Exit(0);
                 }
 
-                CreateAccountStatusBox.Text = "Account " + username + " created";
-                CreateAccountButton1.Content = "Sign In";
-                return;
-            }
+                //CreateAccountStatusBox.Text = "Account " + username + " created";
+                //CreateAccountButton1.Content = "Sign In";
+                //return;
+            //}
 
-            if (CreateAccountButton1.Content.Equals("Sign In")) {
+            //if (CreateAccountButton1.Content.Equals("Sign In")) {
                 // log user in if success
-                Window w = new Home();
-                w.Show();
-                this.Hide();
-                CreateAccountStatusBox.Text = "";
-                CreateAccountButton1.Content = "Create Account";
-            }
+                //Window w = new Home();
+                //w.Show();
+                //MainWindow
+                //this.Hide();
+            //MainWindow.WriteMsg("Account " + username + " created");
+            //MainWindow.s
+
+            // debug
+                // source: http://stackoverflow.com/questions/13644114/how-can-i-access-a-control-in-windows-wpf-from-another-class-or-windows
+                //foreach (Window window in Application.Current.Windows) {
+                    //System.Diagnostics.Debug.WriteLine(Window.na);
+                    //(window as MainWindow).SignInErrorBox.Text = "Account " + username + " created";
+                //}
+
+            GoToMainWindow(sender, e);
+            CreateAccountStatusBox.Text = "";
+            //CreateAccountButton1.Content = "Create Account";
+            //}
         }
 
         private void EnterPressed(object sender, KeyEventArgs e) {

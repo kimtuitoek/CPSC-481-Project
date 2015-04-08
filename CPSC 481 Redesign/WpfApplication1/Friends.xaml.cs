@@ -28,7 +28,121 @@ namespace WpfApplication1
             InitializeComponent();
         }
 
+        // variables for used in add/remove friends confirmation
+        //bool Yes = false;
+        //bool No = false;
+        Window promptWindow;
+        //StackPanel sp1,sp;
+        //TextBlock tb;
+        //Object obj,obj1;
+        //bool add = false;   // true = add friend, false = remove friend
+        bool clicked = false;
+        int operation;  // 0 = add friend, 1 = remove friend
+
+        // event handler for Yes Button
+        private void YesPressed(object sender, RoutedEventArgs e) {
+            clicked = true;
+            promptWindow.Hide();
+            this.IsEnabled = true;
+            if (operation == 0) {
+                AddFriend(sender,e);
+            }
+            if (operation == 1) {
+                RemoveFriend(sender,e);
+            }
+            clicked = false;
+        }
+
+        private void NoPressed(object sender, RoutedEventArgs e) {
+            //clicked = true;
+            promptWindow.Hide();
+            this.IsEnabled = true;
+            //clicked = false;
+        }
+
+        // mode: 0 = yes and no button
+        // mode: 1 = ok button
+        private void PopWindow(String message, int mode, int op) {
+            operation = op;
+            promptWindow = new Window();
+            //promptWindow.Background = System.Drawing
+            promptWindow.WindowStyle = WindowStyle.ToolWindow;
+            promptWindow.Width = 350;
+            promptWindow.Height = 100;
+            promptWindow.ResizeMode = ResizeMode.NoResize;
+            promptWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            TextBlock tbl = new TextBlock();
+            tbl.HorizontalAlignment = HorizontalAlignment.Center;
+            tbl.VerticalAlignment = VerticalAlignment.Center;
+            tbl.FontFamily = new FontFamily("Segoe UI"); // source: https://msdn.microsoft.com/en-us/library/system.windows.controls.textblock.fontfamily%28v=vs.110%29.aspx
+            tbl.FontSize = 20;
+            tbl.TextWrapping = TextWrapping.Wrap;
+            tbl.TextAlignment = TextAlignment.Center;
+            //tbl.Text = "Add Freind " + tblo.Text + "?";
+            tbl.Text = message;
+            StackPanel spa = new StackPanel();
+            spa.Orientation = Orientation.Vertical;
+            spa.Children.Add(tbl);
+            StackPanel span = new StackPanel();
+            span.Orientation = Orientation.Horizontal;
+            spa.Children.Add(span);
+            span.HorizontalAlignment = HorizontalAlignment.Center;
+            span.VerticalAlignment = VerticalAlignment.Center;
+            Button bu = new Button();
+            bu.Width = 60;
+            bu.Height = 30;
+            bu.Content = "Yes";
+            bu.Name = "Yes";
+            if (mode == 1) {
+                bu.Visibility = Visibility.Hidden;
+            }
+            // link an eventhandler
+            // source: https://msdn.microsoft.com/en-us/library/ms743596%28v=vs.110%29.aspx
+            bu.Click += new RoutedEventHandler(YesPressed);
+            span.Children.Add(bu);
+            Button bu1 = new Button();
+            bu1.Width = 60;
+            bu1.Height = 30;
+            bu1.Content = "Ok";
+            bu1.Name = "Ok";
+            if (mode == 0) {
+                bu1.Visibility = Visibility.Hidden;
+            }
+            // link an eventhandler
+            // source: https://msdn.microsoft.com/en-us/library/ms743596%28v=vs.110%29.aspx
+            bu1.Click += new RoutedEventHandler(NoPressed);
+            span.Children.Add(bu1);
+            Button bu2 = new Button();
+            bu2.Width = 60;
+            bu2.Height = 30;
+            bu2.Content = "No";
+            bu2.Name = "No";
+            if (mode == 1) {
+                bu2.Visibility = Visibility.Hidden;
+            }
+            // link an eventhandler
+            // source: https://msdn.microsoft.com/en-us/library/ms743596%28v=vs.110%29.aspx
+            bu2.Click += new RoutedEventHandler(NoPressed);
+            span.Children.Add(bu2);
+            promptWindow.Content = spa;
+            promptWindow.Show();
+        }
+
         private void AddFriend(object sender, RoutedEventArgs e) {
+            if (!clicked) {
+                // prompt user for conformation before adding
+                //add = true;
+                //TextBlock tblo = (TextBlock)sp1.Children[2];
+                String message = "Confirm Add Freinds?";
+                PopWindow(message, 0, 0);
+                this.IsEnabled = false;
+                return;
+            }
+
+            // wait for user confirmation
+            //while (!clicked) {}
+            //clicked = false;
+
             // go through search friends, add all thats checked
             int i = 0;
             while (FriendsListBox.HasItems) {
@@ -56,6 +170,11 @@ namespace WpfApplication1
 
                                 if (tb.Text.Equals(tbl.Text)) {
                                     added = true;
+                                    // tell user this friend already added
+                                    //MyFriendsActions.Text = "Friend " + tb.Text + " already added";
+                                    String message = "Friend " + tb.Text + " already added";
+                                    PopWindow(message,1,2); // op = 2, neither add friend, nor remove friends
+                                    this.IsEnabled = false;
                                     break;
                                 }
                             }
@@ -84,7 +203,8 @@ namespace WpfApplication1
                             FriendsBox.Items.Add(sp1);
 
                             // display this operation on UI
-                            MyFriendsActions.Text = "Friend " + tb.Text + " added";
+                            //MyFriendsActions.Text = "Friend " + tb.Text + " added";
+                            MyFriendsActions.Text = "Selected Friends Added";
                         }
                     }
                 }
@@ -95,6 +215,17 @@ namespace WpfApplication1
         }
 
         private void RemoveFriend(object sender, RoutedEventArgs e) {
+            if (!clicked) {
+                String message = "Confirm Remove Freinds?";
+                PopWindow(message, 0, 1);
+                this.IsEnabled = false;
+                return;
+            }
+
+            // wait for user confirmation
+            //while (!clicked) {}
+            //clicked = false;
+
             // go through friends list, remove all thats checked
             int i = 0;
 
@@ -111,13 +242,14 @@ namespace WpfApplication1
                     if (obj != null) {
                         // get selected object
                         StackPanel sp = (StackPanel)obj;
-
+                        
                         // check if checkbox is selected
                         CheckBox cb = (CheckBox)sp.Children[4];
                         if (!(bool)cb.IsChecked) {
                             continue;
                         }
                         else {
+                            //add = false;
                             // remove friend
                             FriendsBox.Items.Remove(obj);
 
@@ -126,7 +258,8 @@ namespace WpfApplication1
 
                             // display this operation on UI
                             TextBlock tb = (TextBlock)sp.Children[2];
-                            MyFriendsActions.Text = "Friend " + tb.Text + " removed";
+                            //MyFriendsActions.Text = "Friend " + tb.Text + " removed";
+                            MyFriendsActions.Text = "Selected Friends Removed";
                         }
                     }
                 }
@@ -259,7 +392,7 @@ namespace WpfApplication1
         // constructs a stack panel with image and player info displayed
         private void LoadPlayer(String name, String level, String image) {
             StackPanel sp = new StackPanel();
-            sp.Width = 233;
+            sp.Width = 270;
             sp.Height = 75;
             sp.Orientation = Orientation.Horizontal;
             sp.HorizontalAlignment = HorizontalAlignment.Stretch;
@@ -290,7 +423,7 @@ namespace WpfApplication1
 
             // add dummy button1
             Button b = new Button();
-            b.Width = 14;
+            b.Width = 32;
             b.Height = 74;
             b.Visibility = Visibility.Hidden;
             sp.Children.Add(b);
@@ -313,7 +446,7 @@ namespace WpfApplication1
             // add dummy button2
             // same as dummy1
             Button bu = new Button();
-            bu.Width = 14;
+            bu.Width = 32;
             bu.Height = 74;
             bu.Visibility = Visibility.Hidden;
             sp.Children.Add(bu);

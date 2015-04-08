@@ -31,6 +31,10 @@ namespace WpfApplication1
             mainwindow = this;
         }
 
+        public void WriteMsg(String s) {
+            SignInErrorBox.Text = s;
+        }
+
         private void OpenCreateAccount(object sender, RoutedEventArgs e) {
             createuseraccount.Show();
             this.Hide();

@@ -9,8 +9,7 @@
         <Button Content="Quit" HorizontalAlignment="Left" Margin="610,-59,-82,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="1.387,-0.3" Background="#FF353535" FontSize="20" BorderBrush="#FFF5EBEB" Foreground="#FFFBF7F7" Height="59" BorderThickness="4" Click="Exit"/>
         <StackPanel x:Name="middleBackground" HorizontalAlignment="Center" Height="506" Margin="-80,0,-82,-60" VerticalAlignment="Center" Width="792" Background="#FFECECEC" Orientation="Horizontal">
             <Button x:Name="dummy4" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="258" Height="271" Visibility="Hidden"/>
-            <StackPanel Margin="0,10,259,0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="382" Width="375">
-                <TextBlock x:Name="CreateAccountStatusBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="276" Height="55" FontSize="20" FontWeight="Bold" Foreground="#FF353535"/>
+            <StackPanel Margin="0,120,259,57" HorizontalAlignment="Center" VerticalAlignment="Center" Height="329" Width="375">
                 <TextBlock x:Name="CreatAccountUsername" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Enter Username:" VerticalAlignment="Top" Width="162" Height="28" Foreground="#FF353535" FontSize="20" FontWeight="Bold"/>
                 <TextBox x:Name="CreateAccountUserNameTextBox" HorizontalAlignment="Left" Height="20" Margin="0,0,-176,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276"/>
                 <Button x:Name="dummy1" Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="194" Height="36" Visibility="Hidden"/>
@@ -27,6 +26,7 @@
                 </StackPanel>
             </StackPanel>
         </StackPanel>
+        <TextBlock x:Name="CreateAccountStatusBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" Height="49" FontSize="20" FontWeight="Bold" Foreground="#FFFB0505" Margin="134,44,0,0" TextAlignment="Center"/>
     </Grid>
 </Window>
 
