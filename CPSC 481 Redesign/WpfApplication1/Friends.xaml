@@ -8,6 +8,7 @@ Title="Friends" Height="600" Width="800" MinWidth="640" MinHeight="480" ResizeMo
     <Grid>
         <Image Source="Sign In 02.jpg" Stretch="Fill"/>
         <StackPanel x:Name="middleBackground" HorizontalAlignment="Left" Height="513" Margin="0,59,0,0" VerticalAlignment="Top" Width="794" Background="#FFECECEC"/>
+        <TextBlock x:Name="UsernameBox" HorizontalAlignment="Left" Margin="7,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="33" Width="238" FontSize="15" Foreground="#FF353535" FontWeight="Bold"/>
         <StackPanel Margin="48,125,414,128" VerticalAlignment="Center" Height="319">
             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text=" My Friends" VerticalAlignment="Top" Height="26" Width="183" Foreground="#FF353535" FontSize="20" FontWeight="Bold"/>
             <ListBox x:Name="FriendsBox" HorizontalAlignment="Left" Height="294" VerticalAlignment="Top" Width="300" Background="{x:Null}" BorderThickness="0">

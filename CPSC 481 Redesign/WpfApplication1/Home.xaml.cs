@@ -25,6 +25,9 @@ namespace WpfApplication1
         {
             InitializeComponent();
             initializeWindows();
+
+            // debug
+            //System.Diagnostics.Debug.WriteLine(UsernameBox.Text);
         }
 
         private void initializeWindows() {
@@ -38,6 +41,12 @@ namespace WpfApplication1
         }
 
         private void OpenFriendsPage(object sender, RoutedEventArgs e) {
+            // display username on Friends window
+            Grid g = (Grid)friends.Content;
+            TextBlock tb = (TextBlock)g.Children[2];
+            tb.Text = UsernameBox.Text;
+            //System.Diagnostics.Debug.WriteLine(UsernameBox.Text);
+
             friends.Show();
             this.Hide();
         }
@@ -47,6 +56,9 @@ namespace WpfApplication1
         }
 
         private void OpenGroupsPage(object sender, RoutedEventArgs e) {
+            // display username on Groups window
+
+
             groups.Show();
             this.Hide();
         }

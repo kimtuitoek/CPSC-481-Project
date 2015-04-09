@@ -13,11 +13,12 @@
                 <TextBlock x:Name="MainWindwoUsernameTextBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Enter Username:" VerticalAlignment="Top" Width="226" Height="28" Foreground="#FF353535" FontSize="20" AllowDrop="True" FontWeight="Bold"/>
                 <TextBox x:Name="MainWindowUserNameTextBox" HorizontalAlignment="Left" Height="20" Margin="0,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354"/>
                 <TextBlock x:Name="MainWindwoPasswordTextBlock" HorizontalAlignment="Left" Margin="0,85,0,0" TextWrapping="Wrap" Text="Enter Password:" VerticalAlignment="Top" Width="226" Height="28" Foreground="#FF353535" FontSize="20" AllowDrop="True" FontWeight="Bold"/>
-                <TextBox x:Name="MainWindowPasswordTextBox" HorizontalAlignment="Left" Height="20" Margin="0,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354"/>
                 <Button x:Name="MainWindowCreateAccountButton" Content="Create Account" HorizontalAlignment="Left" Margin="0,184,0,0" VerticalAlignment="Top" Width="143" Foreground="#FFFDFDFD" FontSize="20" Background="#FF353535" BorderThickness="2" BorderBrush="#FFFFAE00" Click="OpenCreateAccount"/>
                 <Button x:Name="MainWindowSignInButton" Content="Sign In" HorizontalAlignment="Left" Margin="265,184,0,0" VerticalAlignment="Top" Width="89" Foreground="#FFFDFDFD" FontSize="20" Background="#FF353535" BorderBrush="#FFFFAE00" BorderThickness="2" Click="SignIn"/>
             </Grid>
         </StackPanel>
-        <TextBlock x:Name="SignInErrorBox" x:FieldModifier="public" HorizontalAlignment="Left" Margin="247,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" Height="56" FontSize="20" FontWeight="Bold" Foreground="#FFFB0505" Text="Wrong Username or Password" TextAlignment="Center" Visibility="Hidden"/>
+        <TextBlock x:Name="SignInErrorBox" x:FieldModifier="public" HorizontalAlignment="Left" Margin="245,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="299" Height="56" FontSize="20" FontWeight="Bold" Foreground="#FFFB0505" TextAlignment="Center"/>
+        <PasswordBox x:Name="MainWindowPasswordBox" HorizontalAlignment="Left" Height="20" Margin="214,328,0,0" VerticalAlignment="Top" Width="354"/>
+        <TextBlock HorizontalAlignment="Left" Margin="245,97,0,0" TextWrapping="Wrap" Text="SIGN IN" VerticalAlignment="Top" Width="299" Height="41" FontSize="30" TextAlignment="Center" Foreground="#FF353535" FontWeight="Bold"/>
     </Grid>
 </Window>

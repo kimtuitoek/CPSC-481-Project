@@ -17,6 +17,7 @@
                 <Button Content="PLAY" HorizontalAlignment="Left" VerticalAlignment="Top" Width="294" Height="76" Background="#FF353535" BorderBrush="#FFFFAE00" Foreground="White" BorderThickness="2" FontSize="20" Click="OpenPlayPage"/>
             </StackPanel>
         </StackPanel>
+        <TextBlock x:Name="UsernameBox" HorizontalAlignment="Left" Margin="-50,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="33" Width="238" FontSize="15" Foreground="#FF353535" FontWeight="Bold"/>
 
     </Grid>
 </Window>

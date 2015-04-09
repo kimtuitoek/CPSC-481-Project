@@ -25,6 +25,7 @@ namespace WpfApplication1
         }
 
         private void GoToMainWindow(object sender, RoutedEventArgs e) {
+            CreateAccountStatusBox.Text = "";
             MainWindow.mainwindow.Show();
             this.Hide();
         }
@@ -38,64 +39,47 @@ namespace WpfApplication1
         // sign in if user created an account
         private void CreateAnAccount(object sender, RoutedEventArgs e) {
             //if (CreateAccountButton1.Content.Equals("Create Account")) {
-                // verify password re-enter match
-                if (!CreateAccountEnterPasswordTextBox.Text.Equals(CreateAccountReEnterPasswordTextBox.Text)) {
-                    CreateAccountStatusBox.Text = "Password Re-entered does not match";
-                    return;
-                }
+            // verify password re-enter match
+            if (!CreateAccountEnterPasswordBox.Password.Equals(CreateAccountReEnterPasswordBox.Password)) {
+                CreateAccountStatusBox.Text = "Password Re-entered does not match";
+                return;
+            }
 
-                String username = CreateAccountUserNameTextBox.Text;
-                String password = CreateAccountEnterPasswordTextBox.Text;
+            String username = CreateAccountUserNameTextBox.Text;
+            String password = CreateAccountEnterPasswordBox.Password;
 
-                // empty username/password rejected
-                if (username.Equals("")) {
-                    CreateAccountStatusBox.Text = "Empty username not allowed";
-                    return;
-                }
-                if (password.Equals("")) {
-                    CreateAccountStatusBox.Text = "Empty password not allowed";
-                    return;
-                }
+            // empty username/password rejected
+            if (username.Equals("")) {
+                CreateAccountStatusBox.Text = "Empty username not allowed";
+                return;
+            }
+            if (password.Equals("")) {
+                CreateAccountStatusBox.Text = "Empty password not allowed";
+                return;
+            }
 
-                try {
-                    // save username and password in our database (text file)
-                    // source: https://msdn.microsoft.com/en-us/library/8bh11f1k.aspx
-                    // source: https://msdn.microsoft.com/en-us/library/system.io.directory.getcurrentdirectory%28v=vs.110%29.aspx
-                    String path = System.IO.Directory.GetCurrentDirectory();
-                    path += "\\UserAccounts.txt";
-                    // note: this does not prevent duplicate entry :(
-                    System.IO.File.AppendAllText(@path, username + " " + password + "\n");
-                }
-                catch (SystemException) {
-                    // something wrong with textfile
-                    Environment.Exit(0);
-                }
+            try {
+                // save username and password in our database (text file)
+                // source: https://msdn.microsoft.com/en-us/library/8bh11f1k.aspx
+                // source: https://msdn.microsoft.com/en-us/library/system.io.directory.getcurrentdirectory%28v=vs.110%29.aspx
+                String path = System.IO.Directory.GetCurrentDirectory();
+                path += "\\UserAccounts.txt";
+                // note: this does not prevent duplicate entry :(
+                System.IO.File.AppendAllText(@path, username + " " + password + "\n");
+            }
+            catch (SystemException) {
+                // something wrong with textfile
+                Environment.Exit(0);
+            }
 
-                //CreateAccountStatusBox.Text = "Account " + username + " created";
-                //CreateAccountButton1.Content = "Sign In";
-                //return;
-            //}
+            // post account created message on mainwindow
+            Grid g = (Grid)MainWindow.mainwindow.Content;
+            TextBlock tb = (TextBlock)g.Children[2];
+            tb.Text = "Account " + username + " created";
+            //System.Diagnostics.Debug.WriteLine(tb.Name);
 
-            //if (CreateAccountButton1.Content.Equals("Sign In")) {
-                // log user in if success
-                //Window w = new Home();
-                //w.Show();
-                //MainWindow
-                //this.Hide();
-            //MainWindow.WriteMsg("Account " + username + " created");
-            //MainWindow.s
-
-            // debug
-                // source: http://stackoverflow.com/questions/13644114/how-can-i-access-a-control-in-windows-wpf-from-another-class-or-windows
-                //foreach (Window window in Application.Current.Windows) {
-                    //System.Diagnostics.Debug.WriteLine(Window.na);
-                    //(window as MainWindow).SignInErrorBox.Text = "Account " + username + " created";
-                //}
-
+            //CreateAccountStatusBox.Text = "";
             GoToMainWindow(sender, e);
-            CreateAccountStatusBox.Text = "";
-            //CreateAccountButton1.Content = "Create Account";
-            //}
         }
 
         private void EnterPressed(object sender, KeyEventArgs e) {

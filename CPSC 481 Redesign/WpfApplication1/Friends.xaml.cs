@@ -50,6 +50,10 @@ namespace WpfApplication1
             if (operation == 1) {
                 RemoveFriend(sender,e);
             }
+
+            // debug
+            //System.Diagnostics.Debug.WriteLine(operation);
+
             clicked = false;
         }
 
@@ -63,6 +67,11 @@ namespace WpfApplication1
         // mode: 0 = yes and no button
         // mode: 1 = ok button
         private void PopWindow(String message, int mode, int op) {
+            // clear previous window
+            if (promptWindow != null){
+                promptWindow.Hide();
+            }
+
             operation = op;
             promptWindow = new Window();
             //promptWindow.Background = System.Drawing
@@ -145,6 +154,8 @@ namespace WpfApplication1
 
             // go through search friends, add all thats checked
             int i = 0;
+            bool ischecked = false;
+            //bool repeatAdding = false;
             while (FriendsListBox.HasItems) {
                 try {
                     Object obj = FriendsListBox.Items[i++];
@@ -158,6 +169,8 @@ namespace WpfApplication1
                             continue;
                         }
 
+                        ischecked = true;
+
                         // check if this friend is already added
                         bool added = false;
                         TextBlock tb = (TextBlock)sp.Children[2];
@@ -170,12 +183,14 @@ namespace WpfApplication1
 
                                 if (tb.Text.Equals(tbl.Text)) {
                                     added = true;
-                                    // tell user this friend already added
-                                    //MyFriendsActions.Text = "Friend " + tb.Text + " already added";
-                                    String message = "Friend " + tb.Text + " already added";
-                                    PopWindow(message,1,2); // op = 2, neither add friend, nor remove friends
+
+                                    String message = "Selected Friends already added";
+                                    PopWindow(message, 1, 2); // op = 2, neither add friend, nor remove friends
                                     this.IsEnabled = false;
                                     break;
+
+                                    //repeatAdding = true;
+                                    //break;
                                 }
                             }
                             catch (ArgumentOutOfRangeException) {
@@ -199,6 +214,10 @@ namespace WpfApplication1
                             cb = (CheckBox)sp1.Children[4];
                             cb.IsChecked = false;
 
+                            // disable the checkbox of the added friend
+                            CheckBox cbox = (CheckBox)sp.Children[4];
+                            cbox.IsEnabled = false;
+
                             // add item to the friend list
                             FriendsBox.Items.Add(sp1);
 
@@ -212,6 +231,22 @@ namespace WpfApplication1
                     break;
                 }
             }
+
+            if (!ischecked) {
+                String message = "No Friends Selected";
+                PopWindow(message, 1, 2);
+                this.IsEnabled = false;
+                return;
+            }
+
+            //if (repeatAdding) {
+                // tell user this friend already added
+                //MyFriendsActions.Text = "Friend " + tb.Text + " already added";
+                //String message = "Selected friend already added";
+                //PopWindow(message, 1, 2); // op = 2, neither add friend, nor remove friends
+                //this.IsEnabled = false;
+                //repeatAdding = false;
+            //}
         }
 
         private void RemoveFriend(object sender, RoutedEventArgs e) {
@@ -231,6 +266,8 @@ namespace WpfApplication1
 
             // debug
             //FriendsSearchBox.Text = i.ToString();
+
+            bool ischecked = false;
 
             while (FriendsBox.HasItems) {
                 try {
@@ -252,6 +289,8 @@ namespace WpfApplication1
                             //add = false;
                             // remove friend
                             FriendsBox.Items.Remove(obj);
+                            i--;
+                            ischecked = true;
 
                             // debug
                             //FriendsSearchBox.Text = sp.Name;
@@ -266,6 +305,13 @@ namespace WpfApplication1
                 catch (ArgumentOutOfRangeException) {
                     break;
                 }
+            }
+
+            if (!ischecked) {
+                String message = "No Friends Selected";
+                PopWindow(message, 1, 2);
+                this.IsEnabled = false;
+                return;
             }
         }
 
@@ -363,8 +409,33 @@ namespace WpfApplication1
                 //System.Diagnostics.Debug.WriteLine(name+" "+level+" "+image+"\n");
                 //System.Diagnostics.Debug.WriteLine(name+"\t"+level+"\n");
 
+                // make sure this friend not already added
+                bool repeatdAdding = true;
+                String str = name + " lvl " + level;
+                try {
+                    int item = 0;
+                    while (FriendsBox.HasItems) {
+                        StackPanel span = (StackPanel)FriendsBox.Items[item++];
+                        TextBlock tblo = (TextBlock)span.Children[2];
+
+                        // debug
+                        //System.Diagnostics.Debug.WriteLine(str + " " + tblo.Text);
+
+                        if (tblo.Text.Equals(str)) {
+
+                            // debug
+                            //System.Diagnostics.Debug.WriteLine(str + " " + tblo.Text);
+
+                            //LoadPlayer(name, level, image, false);
+                            repeatdAdding = false;
+                            break;
+                        }
+                    }
+                }
+                catch (ArgumentOutOfRangeException) {/*continue;*/}
+
                 // load player information
-                LoadPlayer(name,level,image);
+                LoadPlayer(name,level,image,repeatdAdding);
                 added++;
             }
 
@@ -390,8 +461,9 @@ namespace WpfApplication1
         }
 
         // constructs a stack panel with image and player info displayed
-        private void LoadPlayer(String name, String level, String image) {
+        private void LoadPlayer(String name, String level, String image, bool isEnabled) {
             StackPanel sp = new StackPanel();
+            sp.IsEnabled = isEnabled;
             sp.Width = 270;
             sp.Height = 75;
             sp.Orientation = Orientation.Horizontal;
@@ -455,6 +527,9 @@ namespace WpfApplication1
             CheckBox cb = new CheckBox();
             cb.HorizontalAlignment = HorizontalAlignment.Center;
             cb.VerticalAlignment = VerticalAlignment.Center;
+            if (!isEnabled) {
+                cb.IsChecked = true;
+            }
             sp.Children.Add(cb);
 
             // finally, add this stackpanel to our UI

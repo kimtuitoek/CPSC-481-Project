@@ -21,6 +21,7 @@ namespace WpfApplication1
     public partial class MainWindow : Window
     {
         public static Window createuseraccount, mainwindow;
+        //public static TextBlock mainwindowtb = SignInErrorBox;
 
         public MainWindow()
         {
@@ -31,11 +32,8 @@ namespace WpfApplication1
             mainwindow = this;
         }
 
-        public void WriteMsg(String s) {
-            SignInErrorBox.Text = s;
-        }
-
         private void OpenCreateAccount(object sender, RoutedEventArgs e) {
+            SignInErrorBox.Text = "";
             createuseraccount.Show();
             this.Hide();
         }
@@ -85,20 +83,26 @@ namespace WpfApplication1
                     //"\npassword match: " + password.Equals(MainWindowPasswordTextBox.Text) + "\n");
 
                 // log user in if matching crediental found
-                if (username.Equals(MainWindowUserNameTextBox.Text) && password.Equals(MainWindowPasswordTextBox.Text)) {
+                if (username.Equals(MainWindowUserNameTextBox.Text) && password.Equals(MainWindowPasswordBox.Password)) {
                     Window w = new Home();
                     w.Show();
                     this.Hide();
 
                     // hide sign in error message after a successful login
-                    SignInErrorBox.Visibility = Visibility.Hidden;
+                    SignInErrorBox.Text = "";
+
+                    // display username on Home window
+                    Grid g = (Grid)w.Content;
+                    TextBlock tb = (TextBlock)g.Children[2];
+                    tb.Text = "Welcome " + username;
+                    //System.Diagnostics.Debug.WriteLine(g.Children[2]);
 
                     break;
                 }
             }
             
             // else, login crediental not found
-            SignInErrorBox.Visibility = Visibility.Visible;
+            SignInErrorBox.Text = "Wrong Username or Password";
         }
 
         // sign in if enter is pressed
