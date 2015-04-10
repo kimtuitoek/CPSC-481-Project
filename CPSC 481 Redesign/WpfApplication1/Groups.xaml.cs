@@ -23,9 +23,112 @@ namespace WpfApplication1
     /// </summary>
     public partial class Groups : Window
     {
+       
         public Groups()
         {
             InitializeComponent();
+        }
+
+        Window promptWindow;
+        bool clicked = false;
+        int operation;  // 0 = add friend, 1 = remove friend
+
+
+        // event handler for Yes Button
+        private void YesPressed(object sender, RoutedEventArgs e)
+        {
+            clicked = true;
+            promptWindow.Hide();
+            this.IsEnabled = true;
+            if (operation == 0)
+            {
+                JoinGroup(sender, e);
+            }
+            if (operation == 1)
+            {
+                LeaveGroup(sender, e);
+            }
+            clicked = false;
+        }
+
+        private void NoPressed(object sender, RoutedEventArgs e)
+        {
+            //clicked = true;
+            promptWindow.Hide();
+            this.IsEnabled = true;
+            //clicked = false;
+        }
+
+        // mode: 0 = yes and no button
+        // mode: 1 = ok button
+        private void PopWindow(String message, int mode, int op)
+        {
+            operation = op;
+            promptWindow = new Window();
+            //promptWindow.Background = System.Drawing
+            promptWindow.WindowStyle = WindowStyle.ToolWindow;
+            promptWindow.Width = 350;
+            promptWindow.Height = 100;
+            promptWindow.ResizeMode = ResizeMode.NoResize;
+            promptWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            TextBlock tbl = new TextBlock();
+            tbl.HorizontalAlignment = HorizontalAlignment.Center;
+            tbl.VerticalAlignment = VerticalAlignment.Center;
+            tbl.FontFamily = new FontFamily("Segoe UI"); // source: https://msdn.microsoft.com/en-us/library/system.windows.controls.textblock.fontfamily%28v=vs.110%29.aspx
+            tbl.FontSize = 20;
+            tbl.TextWrapping = TextWrapping.Wrap;
+            tbl.TextAlignment = TextAlignment.Center;
+            //tbl.Text = "Add Freind " + tblo.Text + "?";
+            tbl.Text = message;
+            StackPanel spa = new StackPanel();
+            spa.Orientation = Orientation.Vertical;
+            spa.Children.Add(tbl);
+            StackPanel span = new StackPanel();
+            span.Orientation = Orientation.Horizontal;
+            spa.Children.Add(span);
+            span.HorizontalAlignment = HorizontalAlignment.Center;
+            span.VerticalAlignment = VerticalAlignment.Center;
+            Button bu = new Button();
+            bu.Width = 60;
+            bu.Height = 30;
+            bu.Content = "Yes";
+            bu.Name = "Yes";
+            if (mode == 1)
+            {
+                bu.Visibility = Visibility.Hidden;
+            }
+            // link an eventhandler
+            // source: https://msdn.microsoft.com/en-us/library/ms743596%28v=vs.110%29.aspx
+            bu.Click += new RoutedEventHandler(YesPressed);
+            span.Children.Add(bu);
+            Button bu1 = new Button();
+            bu1.Width = 60;
+            bu1.Height = 30;
+            bu1.Content = "Ok";
+            bu1.Name = "Ok";
+            if (mode == 0)
+            {
+                bu1.Visibility = Visibility.Hidden;
+            }
+            // link an eventhandler
+            // source: https://msdn.microsoft.com/en-us/library/ms743596%28v=vs.110%29.aspx
+            bu1.Click += new RoutedEventHandler(NoPressed);
+            span.Children.Add(bu1);
+            Button bu2 = new Button();
+            bu2.Width = 60;
+            bu2.Height = 30;
+            bu2.Content = "No";
+            bu2.Name = "No";
+            if (mode == 1)
+            {
+                bu2.Visibility = Visibility.Hidden;
+            }
+            // link an eventhandler
+            // source: https://msdn.microsoft.com/en-us/library/ms743596%28v=vs.110%29.aspx
+            bu2.Click += new RoutedEventHandler(NoPressed);
+            span.Children.Add(bu2);
+            promptWindow.Content = spa;
+            promptWindow.Show();
         }
 
         private void GoToFriends(object sender, RoutedEventArgs e)
@@ -41,16 +144,30 @@ namespace WpfApplication1
 
         private void LeaveGroup(object sender, RoutedEventArgs e)
         {
-            //Confirm choice
+            /*//Confirm choice
             MessageBoxResult result = MessageBox.Show("Do you want to leave these groups?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.No)
             {
+                return;
+            }*/
+            String message = "Do you want to leave these groups?";
+            int popUp_type = 0;
+            int opCode = 1;
+
+            if (!clicked)
+            {
+                // prompt user for conformation before adding
+                //add = true;
+                //TextBlock tblo = (TextBlock)sp1.Children[2];
+                //String message = "Do you want to add these groups?";
+                PopWindow(message, popUp_type, opCode);
+                this.IsEnabled = false;
                 return;
             }
 
             // go through the YourGroups list, remove all that are checked
             int i = 0;
-
+            bool anyChecked = false;
             while (YourGroups.HasItems)
             {
                 try
@@ -70,11 +187,13 @@ namespace WpfApplication1
                         }
                         else
                         {
+                           
                             //-------remove group from YourGroups-------
                             YourGroups.Items.Remove(obj);
+                            anyChecked = true;
+                            i--;
 
                             // check if this group has already exists in OtherGroups
-                            bool added = false;
                             TextBlock tb = (TextBlock)sp.Children[2];
                             int j = 0;
                             while (YourGroups.HasItems)
@@ -96,6 +215,7 @@ namespace WpfApplication1
                                     break;
                                 }
                             }
+
                             //--------Add to other groups list-------
                             // create a deep copy (clone)
                             String savedStackPanel = XamlWriter.Save(sp);
@@ -119,21 +239,48 @@ namespace WpfApplication1
                     break;
                 }
             }
+
+            if (!anyChecked)
+            {
+                message = "No groups selected";
+                popUp_type = 1;
+                opCode = 2;
+                PopWindow(message, popUp_type, opCode);
+                this.IsEnabled = false;
+                return;
+            }
+
             //Display confirmation message
             YourGroupsMessage.Text = "All selected groups removed";
         }
 
         private void JoinGroup(object sender, RoutedEventArgs e)
         {
-            //Confirm choice
+           /* //Confirm choice
             MessageBoxResult result = MessageBox.Show("Do you want to add these groups?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result == MessageBoxResult.No)
             {
+                return;
+            }*/
+            String message = "Do you want to add these groups?";
+            int popUp_type = 0;
+            int opCode = 0;
+           
+            if (!clicked)
+            {
+                // prompt user for conformation before adding
+                //add = true;
+                //TextBlock tblo = (TextBlock)sp1.Children[2];
+                //String message = "Do you want to add these groups?";
+                PopWindow(message, popUp_type, opCode);
+                this.IsEnabled = false;
                 return;
             }
 
             // go through Other Groups list, add all that are checked
             int i = 0;
+            bool anyChecked = false;
+            bool anyDisabled = false;
             while (OtherGroups.HasItems)
             {
                 try
@@ -152,7 +299,10 @@ namespace WpfApplication1
                             continue;
                         }
 
-                        // check if this group has already been added
+                        anyChecked = true;
+
+                        /*
+                        // check if this group is already added
                         bool added = false;
                         TextBlock tb = (TextBlock)sp.Children[2];
                         int j = 0;
@@ -167,6 +317,12 @@ namespace WpfApplication1
                                 if (tb.Text.Equals(tbl.Text))
                                 {
                                     added = true;
+                                    // tell user this friend already added
+                                    //MyFriendsActions.Text = "Friend " + tb.Text + " already added";
+                                    String message = "Group(s) " + tb.Text + " already added";
+                                    PopWindow(message, 1, 2); // op = 2, neither add friend, nor remove friends
+                                    this.IsEnabled = false;
+                                    cb.IsEnabled = false;
                                     break;
                                 }
                             }
@@ -175,12 +331,9 @@ namespace WpfApplication1
                                 break;
                             }
                         }
-
-                        //disable the check box
-                        cb.Visibility = Visibility.Hidden;
-
-                        // otherwise, add friend
-                        if (!added)
+                        */
+                        // otherwise, add group
+                        if (cb.IsEnabled)
                         {
                             // create a deep copy (clone)
                             // source: https://msdn.microsoft.com/en-us/library/system.windows.markup.xamlwriter%28v=vs.110%29.aspx
@@ -188,6 +341,11 @@ namespace WpfApplication1
                             StringReader sr = new StringReader(savedStackPanel);
                             XmlReader xr = XmlReader.Create(sr);
                             StackPanel sp1 = (StackPanel)XamlReader.Load(xr);
+
+                            //Make checkbox hidden in other groups
+                            cb.IsEnabled = false;
+                            anyDisabled = true;
+                            cb.IsChecked = true;
 
                             // cloned stackpanel should not have checkbox selected
                             cb = (CheckBox)sp1.Children[4];
@@ -199,13 +357,25 @@ namespace WpfApplication1
 
                             //Display confirmation message
                             YourGroupsMessage.Text = "All selected groups added";
-                        }
+                       }
                     }
                 }
                 catch (ArgumentOutOfRangeException)
                 {
                     break;
                 }
+            }
+
+            if (!anyChecked || !anyDisabled)
+            {
+
+                message = "No groups selected";
+                popUp_type = 1;
+                opCode = 2;
+                PopWindow(message, popUp_type, opCode);
+                this.IsEnabled = false;
+                return;
+
             }
         }
 
@@ -459,9 +629,94 @@ namespace WpfApplication1
             cb.VerticalAlignment = VerticalAlignment.Center;
             sp.Children.Add(cb);
 
+            //Check whether group has already been added
+            int j = 0;
+            while (YourGroups.HasItems)
+            {
+                try
+                {
+                    Object obje = YourGroups.Items[j++];
+                    StackPanel spa = (StackPanel)obje;
+                    TextBlock tbl = (TextBlock)spa.Children[2];
+
+                    if (tb.Text.Equals(tbl.Text))
+                    {
+                        cb.IsEnabled = false;
+                        cb.IsChecked = true;
+                        break;
+                    }
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    break;
+                }
+            }
+
             // finally, add this stackpanel to our UI
             OtherGroups.Items.Add(sp);
         }
+
+        private void SearchYourGroups(object sender, TextChangedEventArgs e)
+        {
+            
+            // retrive Group name and compare with the requested search
+           String requested = YouGroupBox.Text;
+           int i = 0;
+           while (YourGroups.HasItems)
+           {
+               try
+               {
+                   Object obj = YourGroups.Items[i++];
+                   if (obj != null)
+                   {
+                       // get selected object
+                       StackPanel sp = (StackPanel)obj;
+
+                       // Get text from text  box in stack panel
+                       TextBlock tb = (TextBlock)sp.Children[2];
+
+                       string name = tb.Text;
+                      
+                       //Make comparison
+                       String toCompare;
+                       try
+                       {
+                           toCompare = name.Substring(0, requested.Length);
+                       }
+
+                       catch (ArgumentOutOfRangeException)
+                       {
+                           continue;
+                       }
+                       
+                       //Display all stack panels if entered string is blank
+                       if (requested == "'")
+                       {
+                           sp.Visibility = Visibility.Visible;
+                       }
+                        
+                        //Otherwise hide stack panel
+                       else if (!requested.Equals(toCompare, StringComparison.OrdinalIgnoreCase))
+                       {
+                           sp.Visibility = Visibility.Collapsed;
+                           continue;
+                       }
+                       else
+                       {
+                           sp.Visibility = Visibility.Visible;
+                       }
+                       
+                   }
+               }
+               catch (ArgumentOutOfRangeException)
+               {
+                   break;
+               }
+           }
+        }
+
+
+     
 
     }
 }

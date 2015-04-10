@@ -1,7 +1,7 @@
 ﻿<Window x:Class="WpfApplication1.Groups"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Groups" Height="600" Width="800" MinWidth="640" MinHeight="480" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Icon="noob.jpg">
+        Title="Groups" Height="600" Width="800" MinWidth="640" MinHeight="480" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Icon="noob.jpg" WindowStyle="ToolWindow">
     <Grid>
         <Image Source="Sign In 02.jpg" Stretch="Fill" Margin="0" IsManipulationEnabled="True"/>
         <StackPanel x:Name="middleBackground" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="800" Background="#FFECECEC" Margin="0,60,0,0"/>
@@ -73,9 +73,9 @@
             <Button Content="GROUPS" HorizontalAlignment="Left" Margin="531,31,-413,0" VerticalAlignment="Top" Width="108" Height="60" Background="#FFDFDFDF" BorderBrush="#FFDFDFDF" Foreground="#FF0E0202" FontSize="20" BorderThickness="4"/>
             <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="103" Height="60" Background="#FF353535" BorderBrush="White" Foreground="White" FontSize="20" BorderThickness="4" Margin="-9,31,0,0" Click="OpenPlay" Content="PLAY"/>
             <Button Content="QUIT" HorizontalAlignment="Left" Margin="673,31,-548,0" VerticalAlignment="Top" Width="101" RenderTransformOrigin="1.387,-0.3" Background="#FF353535" FontSize="20"  BorderThickness="4" BorderBrush="White" Foreground="White" Height="60" Click="Quit"/>
-            <Button x:Name="Leave_group" Content="Leave Group" HorizontalAlignment="Left" Margin="188,553,-84,-480" VerticalAlignment="Top" Width="122" Background="#FF353535" Foreground="White" BorderBrush="#FFFFAE00" Height="27" FontSize="18" Click="LeaveGroup"/>
-            <Button x:Name="Join_group" Content="Join Group" HorizontalAlignment="Left" Margin="616,552,-505,-480" VerticalAlignment="Top" Width="115" BorderBrush="#FFFFAE00" Background="#FF353535" Foreground="White" FontSize="18" Click="JoinGroup"/>
-            <TextBox HorizontalAlignment="Left" Height="23" Margin="26,154,-29,-77" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="229"/>
+            <Button x:Name="Leave_group" Content="Leave Group" HorizontalAlignment="Left" Margin="26,536,0,-472" VerticalAlignment="Top" Width="122" Background="#FF353535" Foreground="White" BorderBrush="#FFFFAE00" Height="36" FontSize="18" Click="LeaveGroup"/>
+            <Button x:Name="Join_group" Content="Join Group" HorizontalAlignment="Left" Margin="444,536,-333,-473" VerticalAlignment="Top" Width="115" BorderBrush="#FFFFAE00" Background="#FF353535" Foreground="White" FontSize="18" Click="JoinGroup" Height="37"/>
+            <TextBox x:Name="YouGroupBox" HorizontalAlignment="Left" Height="23" Margin="26,154,-29,-77" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="229" TextChanged="SearchYourGroups"/>
             <Button Content="" HorizontalAlignment="Left" Margin="260,154,-74,-77" VerticalAlignment="Top" Width="40" Height="23" RenderTransformOrigin="0.467,1.077">
                 <Button.Background>
                     <ImageBrush ImageSource="search-button-without-text-md.png"/>
